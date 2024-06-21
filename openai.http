@@ -1,0 +1,7 @@
+curl --location --request POST 'https://api.apiyi.com/v1/embeddings' \
+--header 'Authorization: Bearer sk-pTnwSbTGge3sHSvXFc9a2a488eD342A586351248F7A6CbAa' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+  "model": "text-embedding-ada-002",
+  "input": "The food was delicious and the waiter..."
+}'
