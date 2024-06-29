@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenURLs - Fast Bulk URL Opener</title>
+    <style>
+        /* 全局样式 */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        /* 主容器样式 */
+        .container {
+            max-width: 990px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 标题样式 */
+        h1,
+        h2,
+        h3 {
+            color: #2c3e50;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        /* 主要内容区域样式 */
+        .main-content {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 输入区域样式 */
+        #urlInput {
+            width: 100%;
+            height: 150px;
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            resize: vertical;
+        }
+
+        /* 按钮样式 */
+        button {
+            padding: 10px 200px;
+            margin-right: 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        /* 按钮容器样式 */
+.button-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+/* 按钮样式 */
+button {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+#openButton {
+    background-color: #0042b4;
+    color: #fff;
+    border: none;
+}
+
+#openButton:hover {
+    background-color: #2980b9;
+}
+
+#clearButton {
+    background-color: #f1f1f1;
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+#clearButton:hover {
+    background-color: #e1e1e1;
+}
+
+        /* 输入控件样式 */
+        input,
+        select {
+            margin-bottom: 15px;
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+/* 导航栏样式 */
+.navbar {
+    background-color: #0042b4;
+    color: #fff;
+    padding: 10px 0;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+}
+
+.navbar-menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar-menu li {
+    margin-left: 20px;
+}
+
+.navbar-menu li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5em;
+}
+
+/* 响应式设计 */
+@media screen and (max-width: 768px) {
+    .navbar .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar-menu {
+        display: none;
+        width: 100%;
+    }
+
+    .navbar-menu.active {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .navbar-menu li {
+        margin: 10px 0;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
+
+        /* 页脚样式 */
+        .footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #0042b4;
+            color: #fff;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="navbar-logo">OpenURLs.net</a>
+            <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+            <ul class="navbar-menu">
+                <li><a href="#about">About</a></li>
+                <li><a href="#how-to-use">How to Use</a></li>
+                <li><a href="#who-should-use">Who Should Use</a></li>
+                <li><a href="#where-to-use">Where to Use</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="main-content">
+            <h1>OpenURLs - Fast Bulk URL Opener</h1>
+
+            <h2>Open Multiple URLs</h2>
+            <textarea id="urlInput" placeholder="Paste your links here..."></textarea>
+            <br>
+
+
+            <div class="button-container">
+                <button id="openButton" onclick="openURLs()">Open</button>
+                <button id="clearButton" onclick="clearInput()">Clear</button>
+            </div>
+
+            <br>
+            <label for="delay">Delay between opening links (seconds):</label>
+            <input type="number" id="delay" value="5" min="0">
+            <br>
+            <label for="openMethod">Open in:</label>
+            <select id="openMethod">
+                <option value="tab">New Tabs</option>
+                <option value="window">New Windows</option>
+            </select>
+
+            <h2 id="about">About</h2>
+            <p>OpenURLs is a powerful tool designed to open multiple URLs simultaneously. It's perfect for those who
+                need to access multiple websites quickly, such as web-hosting providers, digital marketing executives,
+                and anyone who frequently checks multiple links at once. With OpenURLs, you can open 20-25 URLs at a
+                time with just a single click, saving you time and effort.</p>
+
+            <h2 id="how-to-use">How to Use</h2>
+            <ol>
+                <li>Copy (CTRL+C) and paste (CTRL+V) your URLs into the text area above. Each URL should be on a
+                    separate line.</li>
+                <li>Set the delay between opening links and choose whether to open in new tabs or windows.</li>
+                <li>Click the "Open" button to start opening the web pages instantly in your browser.</li>
+            </ol>
+
+            <h2 id="who-should-use">Who Should Use OpenURLs?</h2>
+            <ul>
+                <li><strong>SEO Webmasters:</strong> Easily access and analyze multiple websites simultaneously.</li>
+                <li><strong>Web Data Research & Mining Experts:</strong> Open bulk websites for efficient data
+                    collection and analysis.</li>
+                <li>Content Creators/Writers:</strong> Streamline research by opening multiple sources at once.</li>
+            </ul>
+
+            <h2 id="where-to-use">Where You Can Use It</h2>
+            <p>OpenURLs is a one-click, no-install required tool that works on any updated web browser. It's compatible
+                with all editions of Windows, Linux, and iOS operating systems, and can be accessed on computers,
+                smartphones, and tablets.</p>
+
+            <h2 id="faq">FAQ</h2>
+            <h3>Is there a limit to how many URLs I can open?</h3>
+            <p>There's no strict limit, but opening too many URLs at once may cause your browser to freeze momentarily.
+                We recommend opening 20-25 URLs at a time for optimal performance.</p>
+
+            <h3>Is it safe to use OpenURLs?</h3>
+            <p>Yes, OpenURLs is completely safe to use. It's a client-side tool that runs in your browser and doesn't
+                store or transmit any of your data.</p>
+
+            <h3>Can I use OpenURLs on my mobile device?</h3>
+            <p>Yes, OpenURLs is designed to be responsive and works on mobile devices. However, the experience may vary
+                depending on your device and browser settings.</p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; OpenURLs 2024 - All rights reserved</p>
+        </div>
+    </footer>
+
+    <script>
+        function openURLs() {
+            const urlInput = document.getElementById('urlInput').value;
+            const urls = urlInput.split('\n').filter(url => url.trim() !== '');
+            const delay = document.getElementById('delay').value * 1000;
+            const openMethod = document.getElementById('openMethod').value;
+
+            urls.forEach((url, index) => {
+                setTimeout(() => {
+                    if (!url.startsWith('http://') && !url.startsWith('https://')) {
+                        url = 'http://' + url;
+                    }
+                    if (openMethod === 'tab') {
+                        window.open(url, '_blank');
+                    } else {
+                        window.open(url, '_blank', 'noopener,noreferrer');
+                    }
+                }, index * delay);
+            });
+        }
+
+        function clearInput() {
+            document.getElementById('urlInput').value = '';
+        }
+
+        // 动态文本效果
+        function typeWriter(elementId, text, speed) {
+            let i = 0;
+            const element = document.getElementById(elementId);
+            element.innerHTML = '';
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                }
+            }
+            type();
+        }
+
+        // 页面加载完成后执行
+        window.onload = function () {
+            typeWriter("dynamic-text", "Welcome to OpenURLs - Your Fast Bulk URL Opener!", 50);
+        }
+    </script>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.querySelector('.navbar-menu');
+            menu.classList.toggle('active');
+        }
+    </script>
+</body>
+
+</html>
