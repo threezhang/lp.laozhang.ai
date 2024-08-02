@@ -141,6 +141,13 @@
       .faq-question.active .toggle-icon {
         transform: rotate(45deg);
       }
+
+      .code-highlight {
+    background-color: #e6f3ff;
+    padding: 2px 4px;
+    border-radius: 4px;
+    font-family: monospace;
+  }
     </style>
   </head>
   <body>
@@ -195,8 +202,9 @@
             class="primary-button"
             >立即免费注册</a
           >
+          <br>
           <p class="mt-4 text-sm">
-            (每个用户均自动赠送10万的gpt-4o Tokens，免费体验)
+            (注册即自动赠送10万的 gpt-4o Tokens，免费体验，确保能跑通)
           </p>
         </div>
       </div>
@@ -219,7 +227,7 @@
               后台的【令牌】栏目，可直接复制默认令牌使用，或生成新的令牌即 Key
             </p>
             <p class="mt-2 text-sm text-gray-600">
-              Key 的格式是：sk-xxxx......
+              Key 的格式是：<code class="code-highlight">sk-xxxx......</code>
             </p>
           </div>
           <div class="card p-8 tech-border">
@@ -244,21 +252,21 @@
             </div>
             <p class="text-sm text-gray-600 mb-2">
               调用方式与 OpenAI 官方完全一致，只需要将请求地址和 Key
-              修改。简单来说：将 `https://api.openai.com/` 全局替换改成
-              `https://api.apiyi.com`；并使用在『API易』网站后台生成的令牌，其他代码层面无需做任何改动。
+              修改。简单来说：将 <code class="code-highlight">https://api.openai.com/</code> 全局替换改成
+              <code class="code-highlight">https://api.apiyi.com</code>；并使用在『API易』网站后台生成的令牌，其他代码层面无需做任何改动。
             </p>
             <p class="text-sm text-gray-600 mb-2">
-              注意：某些程序需要添加 `v1` 示例，具体有 3 种情况，请测试
+              注意：某些程序需要添加 <code class="code-highlight">v1</code> 示例，具体有 3 种情况，请测试
             </p>
             <ul class="list-disc list-inside text-sm text-gray-600">
-              <li>`https://api.apiyi.com/v1`</li>
-              <li>`https://api.apiyi.com/v1/`</li>
-              <li>`https://api.apiyi.com/v1/chat/completions`</li>
+              <li><code class="code-highlight">https://api.apiyi.com/v1</code></li>
+              <li><code class="code-highlight">https://api.apiyi.com/v1/</code></li>
+              <li><code class="code-highlight">https://api.apiyi.com/v1/chat/completions</code></li>
             </ul>
           </div>
           <div class="card p-8 tech-border">
             <h3 class="text-2xl font-semibold mb-4">
-              4、查看日志，每次请求的消耗
+              4、查看日志，一目了然消耗
             </h3>
             <p>
               通过前三步，快速跑通。而后台的【日志】栏目，可以查看每次调用的详细日志。每一次请求的消耗清清楚楚。
@@ -326,7 +334,7 @@
       </section>
 
       <section class="max-w-3xl mx-auto">
-        <h2 class="text-3xl font-bold mb-8 text-center">常见问题</h2>
+        <h2 class="text-3xl font-bold mb-8 text-center">API易 - 常见问题</h2>
         <div class="bg-white rounded-lg shadow-md">
           <div class="faq-item">
             <div class="faq-question">
@@ -454,10 +462,22 @@
       </section>
     </main>
 
+    <div class="text-center">
+      <a
+        href="https://apiyi.com/register"
+        target="_blank"
+        class="primary-button"
+        >立即免费注册 API易</a
+      >
+      <p class="mt-4 text-sm">
+        (每个用户均自动赠送10万的gpt-4o Tokens，免费体验，确保能跑通)
+      </p>
+    </div>
+
     <footer class="bg-gray-100 mt-16 py-8 text-center">
       <p class="mb-2">
         备用 API 接口（免 Cloudflare
-        盾，国内调用速度更快）：https://vip.apiyi.com
+        盾，国内调用速度更快）：<code class="code-highlight">https://vip.apiyi.com</code>
       </p>
       <p>@2024 API易 | 售后微信：3056978；Email：hi@apiyi.com</p>
     </footer>
