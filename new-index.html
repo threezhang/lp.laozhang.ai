@@ -38,9 +38,11 @@
       .card-gradient-1 {
         background: linear-gradient(135deg, #f6e05e 0%, #ed8936 100%);
       }
+
       .card-gradient-2 {
         background: linear-gradient(135deg, #9ae6b4 0%, #48bb78 100%);
       }
+
       .card-gradient-3 {
         background: linear-gradient(135deg, #90cdf4 0%, #4299e1 100%);
       }
@@ -143,13 +145,14 @@
       }
 
       .code-highlight {
-    background-color: #e6f3ff;
-    padding: 2px 4px;
-    border-radius: 4px;
-    font-family: monospace;
-  }
+        background-color: #e6f3ff;
+        padding: 2px 4px;
+        border-radius: 4px;
+        font-family: monospace;
+      }
     </style>
   </head>
+
   <body>
     <header class="bg-white text-gray-800 py-16">
       <div class="container mx-auto px-4">
@@ -160,8 +163,8 @@
           API易，让 OpenAI API 使用更简易～
         </h2>
         <p class="text-xl mb-12 text-center max-w-3xl mx-auto">
-          本站提供企业级专业稳定的 GPT-4/3.5/Claude
-          等全模型接口的分发服务。不限速，不限时间，无封号，按量计费，明细可查，每一笔消耗都公开透明。
+          本站提供企业级专业稳定的 GPT-4o/GPT-4-Turbo/3.5/Claude
+          等全模型接口的分发服务。不限速，不限时间，按量计费，每一笔消耗都公开透明。
         </p>
 
         <div
@@ -203,7 +206,7 @@
             class="primary-button"
             >立即免费注册</a
           >
-          <br>
+          <br />
           <p class="mt-4 text-sm">
             (注册即自动赠送10万的 gpt-4o Tokens，免费体验，确保能跑通)
           </p>
@@ -216,14 +219,14 @@
         <h2 class="text-3xl font-bold mb-12 text-center">快速开始</h2>
         <div class="space-y-12 max-w-4xl mx-auto">
           <div class="card p-8 tech-border">
-            <h3 class="text-2xl font-semibold mb-4">1、注册「API易」账号</h3>
+            <h3 class="text-2xl font-semibold mb-4">🖥️ 1、注册「API易」账号</h3>
             <p>
               网站右上角，可免费注册一个账号。默认自动赠送 0.1 美金额度，相当于
               10 万 gpt-4o 的Tokens，测试阶段跑通绝对没有问题~
             </p>
           </div>
           <div class="card p-8 tech-border">
-            <h3 class="text-2xl font-semibold mb-4">2、获得 API Key</h3>
+            <h3 class="text-2xl font-semibold mb-4">🔑 2、获得 API Key</h3>
             <p>
               后台的【令牌】栏目，可直接复制默认令牌使用，或生成新的令牌即 Key
             </p>
@@ -232,7 +235,7 @@
             </p>
           </div>
           <div class="card p-8 tech-border">
-            <h3 class="text-2xl font-semibold mb-4">3、修改代码的请求地址</h3>
+            <h3 class="text-2xl font-semibold mb-4">🔄 3、修改代码的请求地址</h3>
             <p class="mb-4">
               本站支持 gpt-4-turbo 或 gpt-4o 、gpt-3.5-turbo等全部 OpenAI
               模型，新用户注册即可试用。
@@ -255,22 +258,33 @@
             </div>
             <p class="text-sm text-gray-600 mb-2">
               调用方式与 OpenAI 官方完全一致，只需要将请求地址和 Key
-              修改。简单来说：将 <code class="code-highlight">https://api.openai.com/</code> 全局替换改成
-              <code class="code-highlight">https://api.apiyi.com</code>；并使用在『API易』网站后台生成的令牌，其他代码层面无需做任何改动。
+              修改。简单来说：将
+              <code class="code-highlight">https://api.openai.com/</code>
+              全局替换改成
+              <code class="code-highlight">https://api.apiyi.com</code
+              >；并使用在『API易』网站后台生成的令牌，其他代码层面无需做任何改动。
             </p>
             <p class="text-sm text-gray-600 mb-2">
-              注意：某些程序需要添加 <code class="code-highlight">v1</code> 示例，具体有 3 种情况，请测试
+              注意：某些程序需要添加
+              <code class="code-highlight">v1</code> 示例，具体有 3
+              种情况，请测试
             </p>
             <ul class="list-disc list-inside text-sm text-gray-600">
-              <li><code class="code-highlight">https://api.apiyi.com/v1</code></li>
-              <li><code class="code-highlight">https://api.apiyi.com/v1/</code></li>
-              <li><code class="code-highlight">https://api.apiyi.com/v1/chat/completions</code></li>
+              <li>
+                <code class="code-highlight">https://api.apiyi.com/v1</code>
+              </li>
+              <li>
+                <code class="code-highlight">https://api.apiyi.com/v1/</code>
+              </li>
+              <li>
+                <code class="code-highlight"
+                  >https://api.apiyi.com/v1/chat/completions</code
+                >
+              </li>
             </ul>
           </div>
           <div class="card p-8 tech-border">
-            <h3 class="text-2xl font-semibold mb-4">
-              4、查看日志，一目了然消耗
-            </h3>
+            <h3 class="text-2xl font-semibold mb-4">📊 4、查看日志，一目了然消耗</h3>
             <p>
               通过前三步，快速跑通。而后台的【日志】栏目，可以查看每次调用的详细日志。每一次请求的消耗清清楚楚。
             </p>
@@ -279,32 +293,30 @@
             </p>
           </div>
           <div class="card p-8 tech-border">
-            <h3 class="text-2xl font-semibold mb-4">5、费率与充值</h3>
-            <p class="mb-2">
-              <strong>性价比高：</strong>若发现账户余额不足，API
-              调用时会有提示，此时欢迎充值购买。本站充值是低于美金汇率的
-              1:7，最低 5 美金即 35
-              元起充，即比官网省钱、且无其他任何手续费，即可享受到官网同源的 API
-              资源。
-            </p>
-            <p class="mb-2">
-              <strong>费率一致：</strong
-              >在模型的调用费率上保持和官网的一致，绝无玩套路的增加倍率。具体模型费率和价格请看
-              <a
-                href="https://apiyi.com/account/pricing"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="text-blue-600 hover:underline"
-                >点击查看模型价格</a
-              >
-            </p>
-            <p>
-              <strong>交个朋友：</strong
-              >加站长微信（3056978），每个客户额外赠送1美金额度。
-            </p>
+            <h3 class="text-2xl font-semibold mb-4">💰 5、费率与充值</h3>
+            <ol class="list-decimal list-inside space-y-4">
+              <li>
+                <strong>性价比高：</strong>
+                若发现账户余额不足，API 调用时会有提示，此时欢迎充值购买。本站充值是低于美金汇率的 1:7，最低 5 美金即 35 元起充，即比官网省钱、且无其他任何手续费，即可享受到官网同源的 API 资源；
+              </li>
+              <li>
+                <strong>费率一致：</strong>
+                在模型的调用费率上保持和官网的一致，绝无玩套路。具体模型价格请看
+                <a
+                  href="https://apiyi.com/account/pricing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-blue-600 hover:underline"
+                >点击查看模型价格</a>；
+              </li>
+              <li>
+                <strong>交个朋友：</strong>
+                加站长微信（3056978），每个客户额外赠送1美金额度。高校师生可获赠 5 美金额度。
+              </li>
+            </ol>
           </div>
           <div class="card p-8 tech-border">
-            <h3 class="text-2xl font-semibold mb-4">6、附：API支持的场景</h3>
+            <h3 class="text-2xl font-semibold mb-4">🔍 6、附：API支持的场景</h3>
             <ul class="list-disc list-inside space-y-2">
               <li>官方代码示例和本站提供的代码示例</li>
               <li>
@@ -360,8 +372,8 @@
                   >API易专业技术团队持续优化中转服务的线路速度，来保证使用体验；
                 </li>
                 <li>
-                  🔄 <strong>方便：</strong>基本上所有用到OpenAI 
-                  API 的地方，API易 都可以无缝替代；
+                  🔄 <strong>方便：</strong>基本上所有用到OpenAI API
+                  的地方，API易 都可以无缝替代；
                 </li>
                 <li>
                   💸
@@ -396,7 +408,8 @@
               <span class="toggle-icon">+</span>
             </div>
             <div class="faq-answer">
-              API易支持所有 OpenAI 的模型，包括但不限于gpt-4o、gpt-4-turbo、gpt-3.5-turbo、DALL-E等，也支持
+              API易支持所有 OpenAI
+              的模型，包括但不限于gpt-4o、gpt-4-turbo、gpt-3.5-turbo、DALL-E等，也支持
               Claude-3.5。具体可用模型列表可在您的账户后台查看。
             </div>
           </div>
@@ -483,8 +496,10 @@
 
     <footer class="bg-gray-100 mt-16 py-8 text-center">
       <p class="mb-2">
-        备用 API 接口（免 Cloudflare
-        盾，国内调用速度更快）：<code class="code-highlight">https://vip.apiyi.com</code>
+        备用 API 接口（免 Cloudflare 盾，国内调用速度更快）：<code
+          class="code-highlight"
+          >https://vip.apiyi.com</code
+        >
       </p>
       <p>@2024 API易 | 售后微信：3056978；Email：hi@apiyi.com</p>
     </footer>
