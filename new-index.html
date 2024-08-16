@@ -9,152 +9,38 @@
       rel="stylesheet"
     />
     <style>
-      :root {
-        --primary-color: #007bff;
-      }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+      "Helvetica Neue", "Arial", "Noto Sans", sans-serif,
+      "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+      "Noto Color Emoji";
+    background-color: #f0f4f8;
+    color: #2d3748;
+  }
 
-      body {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
-          "Helvetica Neue", "Arial", "Noto Sans", sans-serif,
-          "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
-          "Noto Color Emoji";
-        background-color: #f0f4f8;
-        color: #2d3748;
-      }
+  .card {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
 
-      .card {
-        background-color: white;
-        border-radius: 12px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        overflow: hidden;
-        transition: all 0.3s ease;
-      }
+  .card-gradient-1 {
+    background: linear-gradient(135deg, #f6e05e 0%, #ed8936 100%);
+  }
 
-      .card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-      }
+  .card-gradient-2 {
+    background: linear-gradient(135deg, #9ae6b4 0%, #48bb78 100%);
+  }
 
-      .card-gradient-1 {
-        background: linear-gradient(135deg, #f6e05e 0%, #ed8936 100%);
-      }
+  .card-gradient-3 {
+    background: linear-gradient(135deg, #90cdf4 0%, #4299e1 100%);
+  }
 
-      .card-gradient-2 {
-        background: linear-gradient(135deg, #9ae6b4 0%, #48bb78 100%);
-      }
-
-      .card-gradient-3 {
-        background: linear-gradient(135deg, #90cdf4 0%, #4299e1 100%);
-      }
-
-      .primary-button {
-        background-color: var(--primary-color);
-        color: white;
-        padding: 0.75rem 1.5rem;
-        border-radius: 9999px;
-        font-weight: 500;
-        transition: all 0.3s ease;
-        border: none;
-        outline: none;
-        cursor: pointer;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-        text-decoration: none;
-      }
-
-      .primary-button:hover {
-        background-color: #0056b3;
-        transform: translateY(-2px);
-        box-shadow: 0 4px 6px rgba(0, 123, 255, 0.25);
-      }
-
-      .secondary-button {
-        background-color: transparent;
-        color: #4a5568;
-        padding: 0.5rem 1rem;
-        border-radius: 6px;
-        font-weight: 400;
-        transition: all 0.3s ease;
-        border: 1px solid #cbd5e0;
-        outline: none;
-        cursor: pointer;
-        text-decoration: none;
-      }
-
-      .secondary-button:hover {
-        background-color: #edf2f7;
-        color: #2d3748;
-      }
-
-      .tech-border {
-        border: 2px solid #e2e8f0;
-        position: relative;
-      }
-
-      .tech-border::before,
-      .tech-border::after {
-        content: "";
-        position: absolute;
-        width: 20px;
-        height: 20px;
-        border: 2px solid var(--primary-color);
-      }
-
-      .tech-border::before {
-        top: -5px;
-        left: -5px;
-        border-right: none;
-        border-bottom: none;
-      }
-
-      .tech-border::after {
-        bottom: -5px;
-        right: -5px;
-        border-left: none;
-        border-top: none;
-      }
-
-      .faq-item {
-        border-bottom: 1px solid #e2e8f0;
-      }
-
-      .faq-question {
-        cursor: pointer;
-        padding: 1rem;
-        font-weight: 500;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      .faq-answer {
-        padding: 1rem;
-        display: none;
-      }
-
-      .faq-answer.active {
-        display: block;
-      }
-
-      .toggle-icon {
-        transition: transform 0.3s ease;
-      }
-
-      .faq-question.active .toggle-icon {
-        transform: rotate(45deg);
-      }
-
-      .code-highlight {
-        background-color: #e6f3ff;
-        padding: 2px 4px;
-        border-radius: 4px;
-        font-family: monospace;
-      }
-
-      .api-title {
-        color: var(--primary-color);
-      }
     </style>
+    <link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="styles.css"></noscript>
   </head>
 
   <body>
@@ -525,29 +411,6 @@
       </p>
       <p>@2024 API易 | 售后微信：8765058 ；Email：hi@apiyi.com</p>
     </footer>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const faqQuestions = document.querySelectorAll(".faq-question");
-
-        faqQuestions.forEach((question) => {
-          question.addEventListener("click", () => {
-            const answer = question.nextElementSibling;
-            const icon = question.querySelector(".toggle-icon");
-
-            question.classList.toggle("active");
-            answer.classList.toggle("active");
-
-            // 关闭其他打开的问题
-            faqQuestions.forEach((q) => {
-              if (q !== question) {
-                const a = q.nextElementSibling;
-                q.classList.remove("active");
-                a.classList.remove("active");
-              }
-            });
-          });
-        });
-      });
-    </script>
+    <script src="faq.js" defer></script>
   </body>
 </html>
