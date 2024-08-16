@@ -114,3 +114,7 @@
   .api-title {
     color: var(--primary-color);
   }
+
+  ol > li:last-child {
+    list-style: none;
+  }
