@@ -1,7 +1,0 @@
-curl --location --request POST 'https://ai.buyapi.net/v1/embeddings' \
---header 'Authorization: Bearer sk-RWPA7AB9LCWLc9xv8dEeE08032754e00B105A04726Be19E5' \
---header 'Content-Type: application/json' \
---data-raw '{
-  "model": "text-embedding-ada-002",
-  "input": "The food was delicious and the waiter..."
-}'
