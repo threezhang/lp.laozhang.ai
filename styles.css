@@ -118,3 +118,7 @@
   ol > li:last-child {
     list-style: none;
   }
+
+  .underline-link {
+    text-decoration: underline;
+  }

@@ -112,15 +112,15 @@
           <div class="card p-8 tech-border">
             <h3 class="text-2xl font-semibold mb-4">🖥️ 1、注册「API易」账号</h3>
             <p>
-              网站右上角，可免费注册一个账号，将自动赠送 0.1 美金额度，相当于
-              1 万 gpt-4o 的Tokens，测试阶段跑通绝对没有问题~ 加站长微信（8765058），额外赠送1美金额度。
-              教育优惠：高校师生可凭学校邮箱注册，并联系站长获赠 5 美金额度（相当于 50 万 gpt-4o Tokens，处理内容约 20 万汉字）。
+              <a href="https://www.apiyi.com/register" target="_blank" rel="noopener" class="text-blue-600 hover:underline">免费注册</a>：将自动赠送 0.1 美金余额，测试阶段跑通绝对没问题~ 加站长微信(8765058)，加赠一美金余额。
+              <p>教育优惠：高校师生可凭学校邮箱注册，并获赠 5 美金额度（约 50 万 gpt-4o Tokens，能处理约 20 万汉字）。
+              </p>
             </p>
           </div>
           <div class="card p-8 tech-border">
             <h3 class="text-2xl font-semibold mb-4">🔑 2、获得 API Key</h3>
             <p>
-              后台的【令牌】栏目，可直接复制默认令牌使用，或生成新的令牌即 Key
+              后台的<a href="https://www.apiyi.com/token" target="_blank" rel="noopener" class="text-blue-600 hover:underline"> 令牌 </a>栏目，可直接复制「默认令牌」使用，或生成新的令牌即 Key
             </p>
             <p class="mt-2 text-sm text-gray-600">
               Key 的格式是：<code class="code-highlight">sk-xxxx......</code>
@@ -131,8 +131,15 @@
               🔄 3、修改代码的请求地址
             </h3>
             <p class="mb-4">
-              本站支持 gpt-4-turbo 或 gpt-4o 、gpt-3.5-turbo等全部 OpenAI
-              模型，新用户注册即可试用。
+              <strong>调用方式</strong>：只需要将请求地址和 Key
+              修改，其他与 OpenAI 官方完全一致，简单来说：将
+              <code class="code-highlight">https://api.openai.com</code>
+              全局替换改成
+              <code class="code-highlight">https://www.apiyi.com</code
+              >；并使用在『API易』网站后台的默认令牌，其他代码层面无需做任何改动。
+            </p>
+            <p class="mb-4">
+              <strong>模型方面</strong>：本站支持全部 OpenAI 和 Claude 可用模型，注册即可试用。<a href="https://www.apiyi.com/account/profile" target="_blank" rel="noopener" class="text-blue-600 hover:underline"> 账户后台 > 一键复制模型名称 </a>
             </p>
             <div class="flex flex-wrap gap-4 mb-4">
               <a
@@ -151,28 +158,20 @@
               >
             </div>
             <p class="text-sm text-gray-600 mb-2">
-              调用方式与 OpenAI 官方完全一致，只需要将请求地址和 Key
-              修改。简单来说：将
-              <code class="code-highlight">https://api.openai.com/</code>
-              全局替换改成
-              <code class="code-highlight">https://vip.apiyi.com</code
-              >；并使用在『API易』网站后台生成的令牌，其他代码层面无需做任何改动。
-            </p>
-            <p class="text-sm text-gray-600 mb-2">
               注意：某些程序需要添加
               <code class="code-highlight">v1</code> 示例，具体有 3
               种情况，请测试
             </p>
             <ul class="list-disc list-inside text-sm text-gray-600">
               <li>
-                <code class="code-highlight">https://vip.apiyi.com/v1</code>
+                <code class="code-highlight">https://www.apiyi.com/v1</code>
               </li>
               <li>
-                <code class="code-highlight">https://vip.apiyi.com/v1/</code>
+                <code class="code-highlight">https://www.apiyi.com/v1/</code>
               </li>
               <li>
                 <code class="code-highlight"
-                  >https://vip.apiyi.com/v1/chat/completions</code
+                  >https://www.apiyi.com/v1/chat/completions</code
                 >
               </li>
             </ul>
@@ -182,10 +181,10 @@
               📊 4、查看日志，一目了然消耗
             </h3>
             <p>
-              通过前三步，快速跑通。而后台的【日志】栏目，可以查看每次调用的详细日志。每一次请求的消耗清清楚楚。
+              通过前三步，快速跑通。而后台的<a href="https://www.apiyi.com/log" target="_blank" rel="noopener" class="text-blue-600 hover:underline"> 日志 </a>栏目，可以查看每次调用的详细日志。每一次请求的消耗清清楚楚。
             </p>
             <p class="mt-2">
-              新用户注册赠送的额度用完后，可以随时在线通过微信/支付宝充值，API额度即刻到账。
+              新用户注册赠送的额度用完后，可以随时在线通过微信/支付宝充值，余额即刻到账，可继续调用 API。
             </p>
           </div>
           <div class="card p-8 tech-border">
@@ -197,7 +196,7 @@
                 调用时会有提示，此时欢迎充值购买。本站充值是低于美金汇率的
                 1:7，最低 5 美金即 35
                 元起充，即比官网省钱、且无其他任何手续费，即可享受到官网同源的
-                API资源；支持开发票。
+                API 资源；支持开发票。
               </li>
               <li>
                 <strong>费率一致：</strong>
