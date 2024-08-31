@@ -381,19 +381,10 @@ main {
 }
 
 .faq-answer {
-  padding: 0 2rem 2rem; /* 为答案添加内边距，但上边距为0 */
+  padding: 0 1rem 1rem; /* 为答案添加内边距，但上边距为0 */
   display: none; /* 默认隐藏答案 */
 }
 
-.faq-item.active .faq-answer {
-  display: block; /* 当激活时显示答案 */
-}
-
-/* 确保两个栏目使用相同的最大宽度 */
-.max-w-4xl {
-  max-width: 56rem; /* 等同于 Tailwind 的 max-w-4xl */
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 0rem;
-  padding-bottom: 0rem;
+.faq-answer.active {
+  display: block; /* 显示带有 active 类的答案 */
 }
