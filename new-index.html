@@ -31,103 +31,45 @@
         display: flex;
         align-items: center;
       }
+      /* 确保页面至少占满整个视口高度 */
+      html, body {
+        min-height: 100vh;
+        min-height: -webkit-fill-available;
+      }
 
-      .navbar-container {
+      html {
+        height: -webkit-fill-available;
+      }
+
+      body {
         display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-        padding: 0 20px;
+        flex-direction: column;
       }
 
-      .navbar-left {
-        display: flex;
-        align-items: center;
+      /* 主要内容区域应该占据所有可用空间 */
+      main {
+        flex: 1 0 auto;
       }
 
-      .navbar-brand {
-        display: flex;
-        align-items: center;
-        font-weight: bold;
-        font-size: 1.1rem;
-        margin-right: 2rem;
-      }
-
-      .navbar-brand img {
-        height: 24px;
-        margin-right: 0.5rem;
-      }
-
-      .navbar-nav {
-        display: flex;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-      }
-
-      .nav-item {
-        margin-right: 1rem;
-      }
-
-      .nav-link {
-        color: #333;
-        text-decoration: none;
-        display: flex;
-        align-items: center;
-        padding: 0.5rem;
-        border-radius: 4px;
-        transition: background-color 0.3s ease;
-        font-size: 0.9rem;
-      }
-
-      .nav-link i {
-        margin-right: 0.25rem;
-        font-size: 0.9rem;
-      }
-
-      .nav-link:hover,
-      .nav-link.active {
-        background-color: var(--primary-color);
-        color: white;
-      }
-
-      .navbar-auth {
-        display: flex;
-        align-items: center;
-      }
-
+      /* Footer 样式 */
       .footer {
-        background-color: #2d3748;
-        color: #e2e8f0;
-        padding: 2rem 0;
+        flex-shrink: 0;
+        padding-bottom: env(safe-area-inset-bottom, 20px);
       }
 
-      .footer-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-      }
+      /* 移动端特定样式 */
+      @media (max-width: 768px) {
+        body {
+          padding-bottom: 60px; /* 为底部操作栏预留空间 */
+        }
 
-      .footer a {
-        color: #90cdf4;
-        text-decoration: none;
-      }
+        .footer {
+          padding-bottom: calc(env(safe-area-inset-bottom, 20px) + 20px);
+        }
 
-      .footer a:hover {
-        text-decoration: underline;
-      }
-
-      .footer-text {
-        font-size: 0.9rem;
-        margin-bottom: 0.5rem;
-      }
-
-      .footer-code-highlight {
-        background-color: #4a5568;
-        padding: 0.2rem 0.4rem;
-        border-radius: 0.25rem;
-        font-family: monospace;
-        color: #e2e8f0;
+        .footer-text {
+          font-size: 0.8rem;
+        }
       }
     </style>
     <link
@@ -154,44 +96,44 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="https://www.apiyi.com/token" class="nav-link">
+              <a href="https://www.apiyi.com/token" class="nav-link" target="_blank">
                 <i class="fas fa-key"></i> 令牌(Key)
               </a>
             </li>
             <li class="nav-item">
-              <a href="https://www.apiyi.com/log" class="nav-link">
+              <a href="https://www.apiyi.com/log" class="nav-link" target="_blank">
                 <i class="fas fa-clipboard-list"></i> 日志
               </a>
             </li>
             <li class="nav-item">
-              <a href="https://www.apiyi.com/account/profile" class="nav-link">
+              <a href="https://www.apiyi.com/account/profile" class="nav-link" target="_blank">
                 <i class="fas fa-user-circle"></i> 账户
               </a>
             </li>
             <li class="nav-item">
-              <a href="https://www.apiyi.com/chat/1-undefined" class="nav-link">
+              <a href="https://www.apiyi.com/chat/1-undefined" class="nav-link" target="_blank">
                 <i class="fas fa-comments"></i> 对话
               </a>
             </li>
             <li class="nav-item">
-              <a href="https://www.apiyi.com/query" class="nav-link">
+              <a href="https://www.apiyi.com/query" class="nav-link" target="_blank">
                 <i class="fas fa-search"></i> 查询
               </a>
             </li>
             <li class="nav-item">
-              <a href="https://www.apiyi.com/status" class="nav-link">
+              <a href="https://www.apiyi.com/status" class="nav-link" target="_blank">
                 <i class="fas fa-chart-line"></i> 状态
               </a>
             </li>
             <li class="nav-item">
-              <a href="https://www.apiyi.com/about" class="nav-link">
+              <a href="https://www.apiyi.com/about" class="nav-link" target="_blank">
                 <i class="fas fa-info-circle"></i> 关于
               </a>
             </li>
           </ul>
         </div>
         <div class="navbar-auth">
-          <a href="https://www.apiyi.com/account/profile" class="nav-link">
+          <a href="https://www.apiyi.com/account/profile" class="nav-link" target="_blank">
             <i class="fas fa-user"></i> <span class="desktop-only">个人中心</span>
           </a>
         </div>
@@ -446,7 +388,7 @@
                 </li>
                 <li>
                   🌐
-                  <strong>聚合：</strong>汇聚多个大模型，统一对接格式，如 Claude
+                  <strong>聚合��</strong>汇聚多个大模型，统一对接格式，如 Claude
                   使用 OpenAI
                   的格式，只需要换模型名称即可。并将逐步接入更多模型。
                 </li>

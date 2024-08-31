@@ -2,7 +2,6 @@
     --primary-color: #007bff;
   }
 
-
   @media (max-width: 768px) {
     .desktop-nav {
       display: none;
@@ -57,6 +56,104 @@
   .card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  .navbar-left {
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-right: 2rem;
+  }
+
+  .navbar-brand img {
+    height: 24px;
+    margin-right: 0.5rem;
+  }
+
+  .navbar-nav {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-item {
+    margin-right: 1rem;
+  }
+
+  .nav-link {
+    color: #333;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    font-size: 0.9rem;
+  }
+
+  .nav-link i {
+    margin-right: 0.25rem;
+    font-size: 0.9rem;
+  }
+
+  .nav-link:hover,
+  .nav-link.active {
+    background-color: var(--primary-color);
+    color: white;
+  }
+
+  .navbar-auth {
+    display: flex;
+    align-items: center;
+  }
+
+  .footer {
+    background-color: #2d3748;
+    color: #e2e8f0;
+    padding: 2rem 0;
+  }
+
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .footer a {
+    color: #90cdf4;
+    text-decoration: none;
+  }
+
+  .footer a:hover {
+    text-decoration: underline;
+  }
+
+  .footer-text {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-code-highlight {
+    background-color: #4a5568;
+    padding: 0.2rem 0.4rem;
+    border-radius: 0.25rem;
+    font-family: monospace;
+    color: #e2e8f0;
   }
 
   .primary-button {
@@ -194,6 +291,8 @@
     background-color: #2d3748;
     color: #e2e8f0;
     padding: 2rem 0;
+    flex-shrink: 0;
+    padding-bottom: env(safe-area-inset-bottom, 20px);
   }
 
   .footer-container {
@@ -222,4 +321,39 @@
     border-radius: 0.25rem;
     font-family: monospace;
     color: #e2e8f0;
+  }
+
+  /* 确保页面至少占满整个视口高度 */
+  html, body {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+  }
+
+  html {
+    height: -webkit-fill-available;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* 主要内容区域应该占据所有可用空间 */
+  main {
+    flex: 1 0 auto;
+  }
+
+  /* 移动端特定样式 */
+  @media (max-width: 768px) {
+    body {
+      padding-bottom: 60px; /* 为底部操作栏预留空间 */
+    }
+
+    .footer {
+      padding-bottom: calc(env(safe-area-inset-bottom, 20px) + 20px);
+    }
+
+    .footer-text {
+      font-size: 0.8rem;
+    }
   }
