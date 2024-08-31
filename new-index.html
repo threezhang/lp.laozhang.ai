@@ -16,26 +16,118 @@
           "Noto Color Emoji";
         background-color: #f0f4f8;
         color: #2d3748;
+        padding-top: 58px;
       }
 
-      .card {
+      .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
         background-color: white;
-        border-radius: 12px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        overflow: hidden;
-        transition: all 0.3s ease;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        z-index: 1000;
+        height: 58px;
+        display: flex;
+        align-items: center;
       }
 
-      .card-gradient-1 {
-        background: linear-gradient(135deg, #f6e05e 0%, #ed8936 100%);
+      .navbar-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 0 20px;
       }
 
-      .card-gradient-2 {
-        background: linear-gradient(135deg, #9ae6b4 0%, #48bb78 100%);
+      .navbar-left {
+        display: flex;
+        align-items: center;
       }
 
-      .card-gradient-3 {
-        background: linear-gradient(135deg, #90cdf4 0%, #4299e1 100%);
+      .navbar-brand {
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+        font-size: 1.1rem;
+        margin-right: 2rem;
+      }
+
+      .navbar-brand img {
+        height: 24px;
+        margin-right: 0.5rem;
+      }
+
+      .navbar-nav {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .nav-item {
+        margin-right: 1rem;
+      }
+
+      .nav-link {
+        color: #333;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        padding: 0.5rem;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+        font-size: 0.9rem;
+      }
+
+      .nav-link i {
+        margin-right: 0.25rem;
+        font-size: 0.9rem;
+      }
+
+      .nav-link:hover,
+      .nav-link.active {
+        background-color: var(--primary-color);
+        color: white;
+      }
+
+      .navbar-auth {
+        display: flex;
+        align-items: center;
+      }
+
+      .footer {
+        background-color: #2d3748;
+        color: #e2e8f0;
+        padding: 2rem 0;
+      }
+
+      .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .footer a {
+        color: #90cdf4;
+        text-decoration: none;
+      }
+
+      .footer a:hover {
+        text-decoration: underline;
+      }
+
+      .footer-text {
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .footer-code-highlight {
+        background-color: #4a5568;
+        padding: 0.2rem 0.4rem;
+        border-radius: 0.25rem;
+        font-family: monospace;
+        color: #e2e8f0;
       }
     </style>
     <link
@@ -45,9 +137,67 @@
       onload="this.onload=null;this.rel='stylesheet'"
     />
     <noscript><link rel="stylesheet" href="styles.css" /></noscript>
+    <link rel="stylesheet" href="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/5.15.4/css/all.min.css">
   </head>
-
   <body>
+    <nav class="navbar">
+      <div class="navbar-container">
+        <div class="navbar-left">
+          <div class="navbar-brand">
+            <img src="apiyi-logo.webp" alt="API易 Logo">
+            <span>API易</span>
+          </div>
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a href="https://www.apiyi.com/" class="nav-link">
+                <i class="fas fa-home"></i> 首页
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="https://www.apiyi.com/token" class="nav-link">
+                <i class="fas fa-key"></i> 令牌(Key)
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="https://www.apiyi.com/log" class="nav-link">
+                <i class="fas fa-clipboard-list"></i> 日志
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="https://www.apiyi.com/account/profile" class="nav-link">
+                <i class="fas fa-user-circle"></i> 账户
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="https://www.apiyi.com/chat/1-undefined" class="nav-link">
+                <i class="fas fa-comments"></i> 对话
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="https://www.apiyi.com/query" class="nav-link">
+                <i class="fas fa-search"></i> 查询
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="https://www.apiyi.com/status" class="nav-link">
+                <i class="fas fa-chart-line"></i> 状态
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="https://www.apiyi.com/about" class="nav-link">
+                <i class="fas fa-info-circle"></i> 关于
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="navbar-auth">
+          <a href="https://www.apiyi.com/account/profile" class="nav-link">
+            <i class="fas fa-user"></i> 个人中心
+          </a>
+        </div>
+      </div>
+    </nav>
+
     <header class="bg-white text-gray-800 py-16">
       <div class="container mx-auto px-4">
         <h2 class="text-4xl font-bold mb-6 text-center api-title">
@@ -55,7 +205,7 @@
         </h2>
         <p class="text-xl mb-12 text-center max-w-3xl mx-auto">
           本站提供企业级专业稳定的 GPT-4o/4/Claude3.5
-          等全模型<b>官方同源接口</b>的中转分发。不限速，不过期，不惧封号，按量计费，长期可靠服务；让技术助力科研、公益事业。
+          等全模型<b>官方同源接口</b>的中转分发。不限速，不过期，不惧封号，按量计费，长期可靠服务；让技术助力科研、公益事业
         </p>
 
         <div
@@ -145,7 +295,7 @@
               rel="noopener noreferrer"
               class="secondary-button"
               >代码示例(快速上手)</a
-            >
+              >
               <a
                 href="https://apiyi.apifox.cn"
                 target="_blank"
@@ -181,7 +331,7 @@
               通过前三步，快速跑通。而后台的<a href="https://www.apiyi.com/log" target="_blank" rel="noopener" class="text-blue-600 hover:underline"> 日志 </a>栏目，可以查看每次调用的详细日志。每一次请求的消耗清清楚楚。
             </p>
             <p class="mt-2">
-              新用户注册赠送的额度用完后，可以随时在线通过微信/支付宝充值，余额即刻到账，可继续调用 API。
+              新户注册赠送的额度用完后，可以随时在线通过微信/支付宝充值，余额即刻到账，可继续调用 API。
             </p>
           </div>
           <div class="card p-8 tech-border">
@@ -208,7 +358,7 @@
               </li>
               <li>
                 <strong>交个朋友：</strong>
-                加站长微信（8765058），每个客户额外赠送1美金额度。高校师生可获赠
+                加站长微信（8765058），每个客户额外赠送 1 美金额度。高校师生可获赠
                 5 美金额度。
               </li>
               <li>
@@ -218,21 +368,21 @@
                     target="_blank"
                     rel="noopener noreferrer"
                     class="secondary-button"
-                    >提额全攻略：邀请好友返10% ></a
+                    >提额攻略：邀请好友返10% ></a
                   >
                 </div>
               </li>
             </ol>
           </div>
           <div class="card p-8 tech-border">
-            <h3 class="text-2xl font-semibold mb-4">🔍 6、附：API支持的场景</h3>
+            <h3 class="text-2xl font-semibold mb-4">🔍 6、附：API 支持的场景</h3>
             <ul class="list-disc list-inside space-y-2">
               <li>官方代码示例和本站提供的代码示例</li>
               <li>
-                GitHub上大多数开源的OpenAI第三方"对话聊天"程序（如ChatGPT Next
+                GitHub上大多数开源OpenAI第三方"对话聊天"程序（如ChatGPT Next
                 Web、Lobe Chat等）
               </li>
-              <li>支持填写API代理地址的第三方封装程序</li>
+              <li>支持填写 API 代理地址的第三方封装程序</li>
               <li>自定义开发项目（如数据集对比实验、LangChain等）</li>
               <li>浏览器插件（如OpenAI Translator、Glarity、沉浸式翻译）</li>
             </ul>
@@ -273,7 +423,7 @@
                 <li>
                   🛡️
                   <strong>稳定：</strong>API易
-                  将用户请求经美国服务器直接转发并即时响应，保障服务稳定；
+                  将用户请求经美国服务器直接发并即时响应，保障服务稳定；
                 </li>
                 <li>
                   ⚡
@@ -320,7 +470,7 @@
               <span class="toggle-icon">+</span>
             </div>
             <div class="faq-answer">
-              登录您的API易账户后，在"充值"页面选择充值金额，支持微信和支付宝付款。最低充值金额为5美元，充值比例为1:7（即5美元=35元人民币）。充值到余额，即可用于消费。充值金额大于
+              登录您的API易账户后，在"充值"页选择充值金额，支持微信和支付宝付款。最低充值金额为5美元，充值比例为1:7（即5美元=35元人民币）。充值到额，即可用于费充值金额大于
               50 美金即 350 元，还可以购买套餐获得更多额度赠送。支持对公转账，需联系客服，支持开票（下单后联系客服，提供付款记录和抬头）
             </div>
           </div>
@@ -331,7 +481,7 @@
             </div>
             <div class="faq-answer">
               按量计费，计费单位是
-              Tokens，跟使用的模型、输入和输出的长度有关。您自行测试一下，每次请求都有明细日志可以查询，每笔消耗清清楚楚。这样可以估算自己的项目需要多少的消耗。
+              Tokens，使用的模型输入和输出的长度有关。您自行测试一下，每次请求都有明细日志可以查询，每笔消耗清清楚楚。这样可以估算自己的项目需要多少的消耗。
             </div>
           </div>
           <div class="faq-item">
@@ -340,18 +490,18 @@
               <span class="toggle-icon">+</span>
             </div>
             <div class="faq-answer">
-              API易的费率与OpenAI官方保持一致，没有额外加价。具体每个模型的费率可以在您的账户后台或我们的定价页面查看。额度
+              API易的费率与OpenAI官方保持一致，没有额外加价。具体每个模型的率可以在您的账户后台或我们的定价页面查看。额度
               = 分组倍率1 * 模型倍率1 * （提示 token 数 + 补全 token 数 *
               补全倍率）。一句话介绍：【API易的费率计算和官方一致】。
             </div>
           </div>
           <div class="faq-item">
             <div class="faq-question">
-              6）如何查看 API 使用记录和消费明细？
+              6）如何查看 API 使用记录和消费详细？
               <span class="toggle-icon">+</span>
             </div>
             <div class="faq-answer">
-              在您的API易账户后台，"日志"页面可以查看每次API调用的详细记录，包括使用的模型、消耗的token数量和对应的费用。
+              在您的API账户后台，"日志"页面可以查看每次API调用的详细记录，包括使用的模型、消耗的token数量和对应的费用。
             </div>
           </div>
           <div class="faq-item">
@@ -362,9 +512,9 @@
             <div class="faq-answer">
               OpenAI 方面，GPT-4o 的各个版本 API 知识库最新，成本较低
               同时支持图片输入，且输入长度已经默认是 128K 了，输出可达 16K。
-              GPT-4o-mini 是替代原来的 GPT-3.5，智能程度一般但胜在价格便宜~
+              GPT-4o-mini 是替代原来的 GPT-3.5，智能程度一般但胜价格便宜~
               Claude 的 3.5 API
-              适合翻译，文本生成等任务。具体模型名称请从「账户」栏目查看并复制。
+              适合翻译，文本生成等任务。具体模名称请从「账户」栏目查看并复制。
             </div>
           </div>
           <div class="faq-item">
@@ -374,7 +524,7 @@
             </div>
             <div class="faq-answer">
               科普下：Plus 和 API 是两个体系，完全独立分开的。 在OpenAI
-              官网开发者后台 API Key 地方，验证了海外手机号码也用不了
+              官网开发后台 API Key 地方，验证了海外手机号码也用不了
               API，还是需要充值额度的（需要海外信用卡，很麻烦）。本站也另外提供直连 API
               代充服务，但价格相对高，远没有中转站性价比高。
             </div>
@@ -388,7 +538,7 @@
               <p>API易采取以下措施处理内容安全和合规性：</p>
               <ul class="list-disc pl-5 mt-2">
                 <li><strong>内容审核：</strong> 已接入专业官方的内容审核 API，识别并拦截潜在违规内容而不返回。</li>
-                <li><strong>合规要求：</strong> 用户必须遵守所在地区的法律法规。API易 平台保留对违规行为采取行动的权利。</li>
+                <li><strong>合规求：</strong> 用户必须遵守所在区的法律法规。API易 平台保留对违规行为采取行动的权利。</li>
                 <li><strong>违规后果：</strong> 重复或严重违规可能导致账户被暂停或终止，已支付的费用不予退还。</li>
               </ul>
               <p class="mt-4">建议用户仔细阅读我们的服务条款和使用政策。如有任何疑问，请联系我们的支持团队。</p>
@@ -402,12 +552,12 @@
             <div class="faq-answer">
               API易高度重视用户数据安全，采取了多重措施保护您的信息：
               <ul class="list-disc pl-5 mt-2">
-                <li><strong>端到端加密</strong>：所有数据传输均采用TLS 1.3协议加密，确保数据在传输过程中的安全。</li>
-                <li><strong>最小化数据存储</strong>：API易 仅作为中转平台，不会存储或查看您的API请求内容（输入和输出）。</li>
-                <li><strong>有限日志记录</strong>：API易 只记录基础日志，包括使用的模型和Tokens长度，用于故障排查和计费。日志不包含具体内容。</li>
-                <li><strong>短期日志保留</strong>：出于客户数据安全考虑和资源优化（磁盘空间要钱~~），日志仅保留7天。</li>
+                <li><strong>端到端加密</strong>：所有数据传输均采用TLS 1.3协议加密，确保数据在传过程中的安全。</li>
+                <li><strong>最小化数据存储</strong>：API易 仅为中转平台，不会存储或查看您的API请求内容（输入和输出）。</li>
+                <li><strong>有限日志记录</strong>：API易 只记录基础日志���包括使用的模型和Tokens长度，用于故障排查和计费。日志不包含具体内容。</li>
+                <li><strong>短期日志保留</strong>：出于客户数据安全考虑和资源优化（磁盘空间也要钱~~），日志仅保留7天。</li>
                 <li><strong>严格访问控制</strong>：只有经过授权的技术人员才能在必要时访问匿名化的日志数据。</li>
-                <li><strong>定期安全审计</strong>：API易 团队会定期进行安全评估和更新，以应对新的安全挑战。</li>
+                <li><strong>定期安全审计</strong>：API易 团队会定期进安全评估和更，以应对新的安全挑战。</li>
                 <li><strong>合规性</strong>：API易 团队严格遵守相关的数据保护法规和行业标准。</li>
               </ul>
               <p class="mt-4">如果您对数据安全有任何疑问，欢迎联系我们的技术支持团队。</p>
@@ -417,7 +567,7 @@
       </section>
     </main>
 
-    <div class="text-center">
+    <div class="text-center mt-8 mb-16">
       <a
         href="https://www.apiyi.com/register"
         target="_blank"
@@ -426,25 +576,34 @@
         >立即免费注册API易</a
       >
       <p class="mt-4 text-sm">
-        (每个用户均自动赠送1万的gpt-4o
-        Tokens，确保能跑通)
+        (每个用户均自动赠送1万的gpt-4o Tokens，确保能跑通)
       </p>
     </div>
-    <footer class="bg-gray-100 mt-16 py-8 text-center">
-      <p class="mb-2">
-        备用API接口（免 Cloudflare 盾，部分地区调用速度更快）：<code
-          class="code-highlight"
-          >https://vip.apiyi.com</code
-        >
-      </p>
-      <p>
-        @2024 API易 All rights reserved |
-        <!-- <a href="http://www.beian.miit.gov.cn/" target="_blank">浙ICP备2024012043号</a> | -->
-        <a href="serviceAgreement.html" target="_blank">用户协议</a> |
-        <a href="privacyPolicy.html" target="_blank">隐私政策</a> |
-        售后微信：8765058。
-      </p>
+    <footer class="footer">
+      <div class="footer-container text-center">
+        <p class="footer-text">
+          备用API接口（免 Cloudflare 盾，部分地区调用速度更快）：<code class="footer-code-highlight">https://vip.apiyi.com</code>
+        </p>
+        <p class="footer-text">
+          @2024 API易 All rights reserved |
+          <a href="serviceAgreement.html" target="_blank">用户协议</a> |
+          <a href="privacyPolicy.html" target="_blank">隐私政策</a> |
+          售后微信：8765058
+        </p>
+      </div>
     </footer>
     <script src="faq.js" defer></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const currentPath = window.location.pathname;
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        navLinks.forEach(link => {
+          if (link.getAttribute('href') === currentPath) {
+            link.classList.add('active');
+          }
+        });
+      });
+    </script>
   </body>
 </html>
