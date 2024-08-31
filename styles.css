@@ -337,3 +337,12 @@ main {
 .section-docs {
   margin-top: -5rem;  /* 使用负边距来减少与上方内容的距离 */
 }
+
+/* 卡片里的 code 样式 */
+.code-highlight {
+  background-color: #e6f3ff;
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-family: monospace;
+  color: #333;
+}
