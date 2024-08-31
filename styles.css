@@ -372,7 +372,7 @@ main {
 }
 
 .faq-question {
-  padding: 1rem; /* 为问题添加适当的内边距 */
+  padding: 1rem 2rem; /* 为问题添加适当的内边距 */
   cursor: pointer;
   display: flex;
   justify-content: space-between;
@@ -381,7 +381,7 @@ main {
 }
 
 .faq-answer {
-  padding: 0 1rem 1rem; /* 为答案添加内边距，但上边距为0 */
+  padding: 0 2rem 1rem 2rem; /* 为答案添加内边距，但上边距为0 */
   display: none; /* 默认隐藏答案 */
 }
 
