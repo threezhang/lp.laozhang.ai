@@ -265,10 +265,6 @@ main {
 }
 
 @media (max-width: 768px) {
-  body {
-    padding-bottom: 60px;
-  }
-
   .footer {
     padding-bottom: calc(env(safe-area-inset-bottom, 20px) + 40px);
   }
@@ -311,10 +307,6 @@ main {
   .mobile-only {
     display: none;
   }
-
-  .mobile-nav {
-    display: none;
-  }
 }
 
 /* 添加这个样式来恢复浅色背景 */
@@ -345,4 +337,9 @@ main {
   border-radius: 4px;
   font-family: monospace;
   color: #333;
+}
+
+.footer {
+  margin-top: 0;
+  padding-top: 2rem; /* 根据需要调整 */
 }
