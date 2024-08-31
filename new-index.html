@@ -8,70 +8,6 @@
       href="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/tailwindcss/2.2.19/tailwind.min.css"
       rel="stylesheet"
     />
-    <style>
-      body {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
-          "Helvetica Neue", "Arial", "Noto Sans", sans-serif,
-          "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
-          "Noto Color Emoji";
-        background-color: #f0f4f8;
-        color: #2d3748;
-        padding-top: 58px;
-      }
-
-      .navbar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        background-color: white;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        z-index: 1000;
-        height: 58px;
-        display: flex;
-        align-items: center;
-      }
-      /* 确保页面至少占满整个视口高度 */
-      html, body {
-        min-height: 100vh;
-        min-height: -webkit-fill-available;
-      }
-
-      html {
-        height: -webkit-fill-available;
-      }
-
-      body {
-        display: flex;
-        flex-direction: column;
-      }
-
-      /* 主要内容区域应该占据所有可用空间 */
-      main {
-        flex: 1 0 auto;
-      }
-
-      /* Footer 样式 */
-      .footer {
-        flex-shrink: 0;
-        padding-bottom: env(safe-area-inset-bottom, 20px);
-      }
-
-      /* 移动端特定样式 */
-      @media (max-width: 768px) {
-        body {
-          padding-bottom: 60px; /* 为底部操作栏预留空间 */
-        }
-
-        .footer {
-          padding-bottom: calc(env(safe-area-inset-bottom, 20px) + 20px);
-        }
-
-        .footer-text {
-          font-size: 0.8rem;
-        }
-      }
-    </style>
     <link
       rel="preload"
       href="styles.css"
@@ -96,44 +32,44 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="https://www.apiyi.com/token" class="nav-link" target="_blank">
-                <i class="fas fa-key"></i> 令牌(Key)
+              <a href="https://www.apiyi.com/token" class="nav-link">
+                <i class="fas fa-key"></i> 令牌
               </a>
             </li>
             <li class="nav-item">
-              <a href="https://www.apiyi.com/log" class="nav-link" target="_blank">
+              <a href="https://www.apiyi.com/log" class="nav-link">
                 <i class="fas fa-clipboard-list"></i> 日志
               </a>
             </li>
             <li class="nav-item">
-              <a href="https://www.apiyi.com/account/profile" class="nav-link" target="_blank">
-                <i class="fas fa-user-circle"></i> 账户
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="https://www.apiyi.com/chat/1-undefined" class="nav-link" target="_blank">
+              <a href="https://www.apiyi.com/chat/1-undefined" class="nav-link">
                 <i class="fas fa-comments"></i> 对话
               </a>
             </li>
             <li class="nav-item">
-              <a href="https://www.apiyi.com/query" class="nav-link" target="_blank">
+              <a href="https://www.apiyi.com/query" class="nav-link">
                 <i class="fas fa-search"></i> 查询
               </a>
             </li>
             <li class="nav-item">
-              <a href="https://www.apiyi.com/status" class="nav-link" target="_blank">
+              <a href="https://www.apiyi.com/status" class="nav-link">
                 <i class="fas fa-chart-line"></i> 状态
               </a>
             </li>
             <li class="nav-item">
-              <a href="https://www.apiyi.com/about" class="nav-link" target="_blank">
+              <a href="https://www.apiyi.com/about" class="nav-link">
                 <i class="fas fa-info-circle"></i> 关于
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#faq" class="nav-link">
+                <i class="fas fa-question-circle"></i> 常见问题
               </a>
             </li>
           </ul>
         </div>
         <div class="navbar-auth">
-          <a href="https://www.apiyi.com/account/profile" class="nav-link" target="_blank">
+          <a href="https://www.apiyi.com/account/profile" class="nav-link">
             <i class="fas fa-user"></i> <span class="desktop-only">个人中心</span>
           </a>
         </div>
@@ -147,7 +83,7 @@
         </h2>
         <p class="text-xl mb-12 text-center max-w-3xl mx-auto">
           本站提供企业级专业稳定的 GPT-4o/4/Claude3.5
-          等全模型<b>官方同源接口</b>的中转分发。不限速，不过期，不惧封号，按量计费，长期可靠服务；让技术助力科研、公益事业
+          等全模型<b>官方同源接口</b>的中转分发。不限速，不过期，不惧封号，按量计费，长期可靠服务；让技术助力科研、公益事业！
         </p>
 
         <div
@@ -170,7 +106,7 @@
           </div>
           <div class="card card-gradient-3 p-6">
             <h3 class="text-xl font-semibold mb-4 text-gray-800">
-              优势 3：官网同源、稳定可靠
+              优势 3：官网同源，稳定可靠
             </h3>
             <p class="text-gray-700">
               源自官网直接转发，加密传输，规避平台封号，专业技术确保你可安全、稳定使用
@@ -194,8 +130,8 @@
       </div>
     </header>
 
-    <main class="container mx-auto py-16 px-4">
-      <section class="mb-16">
+    <main class="bg-light">
+      <section class="mb-16 title-h2">
         <h2 class="text-3xl font-bold mb-12 text-center">快速开始，只需三步 ↓</h2>
         <div class="space-y-12 max-w-4xl mx-auto">
           <div class="card p-8 tech-border">
@@ -289,7 +225,7 @@
               </li>
               <li>
                 <strong>费率一致：</strong>
-                在模型的调用费率上保持和官网的一致，绝无玩套路。具体模型价格请看
+                在模型的调用费率上保持和官网的一致，绝无玩套路。体模型价格请看
                 <a
                   href="https://www.apiyi.com/account/pricing"
                   target="_blank"
@@ -332,7 +268,7 @@
         </div>
       </section>
 
-      <section class="text-center mb-16">
+      <section class="text-center mb-16 title-little section-docs">
         <h2 class="text-3xl font-bold mb-8">开发文档</h2>
         <div class="flex flex-wrap justify-center gap-4">
           <a
@@ -340,7 +276,7 @@
             target="_blank"
             rel="noopener noreferrer"
             class="primary-button"
-            >API易 - 帮助中心</a
+            >API易 帮助中心</a
           >
           <a
             href="https://help.apiyi.com/free-trial-openai-api-key-and-claude-api-key"
@@ -352,8 +288,8 @@
         </div>
       </section>
 
-      <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl font-bold mb-8 text-center">API易 - 常见问题</h2>
+      <section id="faq" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold mb-8 text-center title-little">API易 - 常见问题</h2>
         <div class="bg-white rounded-lg shadow-md">
           <div class="faq-item">
             <div class="faq-question">
@@ -388,7 +324,7 @@
                 </li>
                 <li>
                   🌐
-                  <strong>聚合��</strong>汇聚多个大模型，统一对接格式，如 Claude
+                  <strong>聚合</strong>汇聚多个大模型，统一对接格式，如 Claude
                   使用 OpenAI
                   的格式，只需要换模型名称即可。并将逐步接入更多模型。
                 </li>
@@ -413,7 +349,7 @@
             </div>
             <div class="faq-answer">
               登录您的API易账户后，在"充值"页选择充值金额，支持微信和支付宝付款。最低充值金额为5美元，充值比例为1:7（即5美元=35元人民币）。充值到额，即可用于费充值金额大于
-              50 美金即 350 元，还可以购买套餐获得更多额度赠送。支持对公转账，需联系客服，支持开票（下单后联系客服，提供付款记录和抬头）
+              50 美金即 350 元，还可购买套餐获得更多额度赠送。支持对公转账，需联系客服，支持开票（下单后联系客服，提供付款记录和抬头）
             </div>
           </div>
           <div class="faq-item">
@@ -456,7 +392,7 @@
               同时支持图片输入，且输入长度已经默认是 128K 了，输出可达 16K。
               GPT-4o-mini 是替代原来的 GPT-3.5，智能程度一般但胜价格便宜~
               Claude 的 3.5 API
-              适合翻译，文本生成等任务。具体模名称请从「账户」栏目查看并复制。
+              适合翻译，文本生成等任务。具体模名称请从「账户后台」栏目查看，复制。
             </div>
           </div>
           <div class="faq-item">
@@ -544,6 +480,17 @@
           if (link.getAttribute('href') === currentPath) {
             link.classList.add('active');
           }
+        });
+
+        // 添加平滑滚动到锚点的功能
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+          anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+              behavior: 'smooth'
+            });
+          });
         });
       });
     </script>
