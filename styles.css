@@ -139,11 +139,11 @@ body {
     "Noto Color Emoji";
   background-color: #f0f4f8;
   color: #2d3748;
+  padding-top: 58px;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   min-height: -webkit-fill-available;
-  padding-top: calc(58px + env(safe-area-inset-top));
 }
 
 html {
@@ -297,10 +297,22 @@ main {
   .navbar-auth .nav-link {
     padding: 0.25rem;
   }
+
+  .navbar-nav {
+    display: none;
+  }
+
+  .mobile-nav {
+    display: flex;
+  }
 }
 
 @media (min-width: 769px) {
   .mobile-only {
+    display: none;
+  }
+
+  .mobile-nav {
     display: none;
   }
 }
