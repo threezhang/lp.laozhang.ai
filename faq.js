@@ -1,4 +1,5 @@
-window.addEventListener('load', function() {
+document.addEventListener('DOMContentLoaded', function() {
+  // FAQ 功能
   const faqQuestions = document.querySelectorAll(".faq-question");
   faqQuestions.forEach((question) => {
     question.addEventListener("click", () => {
@@ -12,6 +13,25 @@ window.addEventListener('load', function() {
           q.classList.remove("active");
           q.nextElementSibling.style.display = 'none';
         }
+      });
+    });
+  });
+
+  // 导航高亮功能
+  const currentPath = window.location.pathname;
+  const navLinks = document.querySelectorAll('.nav-link');
+  navLinks.forEach(link => {
+    if (link.getAttribute('href') === currentPath) {
+      link.classList.add('active');
+    }
+  });
+
+  // 平滑滚动到锚点功能
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
       });
     });
   });

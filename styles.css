@@ -343,3 +343,14 @@ main {
   margin-top: 0;
   padding-top: 2rem; /* 根据需要调整 */
 }
+
+.logo-img {
+  max-width: 24px;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .logo-img {
+    max-width: 24px;
+  }
+}

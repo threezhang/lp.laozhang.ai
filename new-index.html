@@ -22,7 +22,7 @@
       <div class="navbar-container">
         <div class="navbar-left">
           <div class="navbar-brand">
-            <img src="apiyi-logo.webp" alt="API易 Logo">
+            <img src="apiyi-logo.webp" alt="API易 Logo" width="24" height="24" class="logo-img">
             <span>API易</span>
           </div>
           <ul class="navbar-nav desktop-nav">
@@ -471,28 +471,5 @@
       </div>
     </footer>
     <script src="faq.js" defer></script>
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const currentPath = window.location.pathname;
-        const navLinks = document.querySelectorAll('.nav-link');
-        
-        navLinks.forEach(link => {
-          if (link.getAttribute('href') === currentPath) {
-            link.classList.add('active');
-          }
-        });
-
-        // 添加平滑滚动到锚点的功能
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-          anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-              behavior: 'smooth'
-            });
-          });
-        });
-      });
-    </script>
   </body>
 </html>
