@@ -64,7 +64,8 @@
 }
 
 .faq-question {
-  padding: 1rem; /* 为问题添加适当的内边距 */
+  padding: 1rem;
+  /* 为问题添加适当的内边距 */
   cursor: pointer;
   display: flex;
   justify-content: space-between;
@@ -72,12 +73,15 @@
 }
 
 .faq-answer {
-  padding: 0 1rem 1rem; /* 为答案添加内边距，但上边距为0 */
-  display: none; /* 默认隐藏答案 */
+  padding: 0 1rem 1rem;
+  /* 为答案添加内边距，但上边距为0 */
+  display: none;
+  /* 默认隐藏答案 */
 }
 
 .faq-item.active .faq-answer {
-  display: block; /* 当激活时显示答案 */
+  display: block;
+  /* 当激活时显示答案 */
 }
 
 .toggle-icon {
@@ -92,7 +96,7 @@
   color: var(--primary-color);
 }
 
-ol > li:last-child {
+ol>li:last-child {
   list-style: none;
 }
 
@@ -142,27 +146,6 @@ html {
   height: -webkit-fill-available;
 }
 
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  background-color: white;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  z-index: 1000;
-  height: 58px;
-  display: flex;
-  align-items: center;
-  padding-top: env(safe-area-inset-top);
-}
-
-.navbar-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  padding: 0 20px;
-}
 
 .navbar-left {
   display: flex;
@@ -314,12 +297,14 @@ main {
 .title-little {
   padding-top: 1rem;
   padding-bottom: 1rem;
-  margin-top: -3rem;  /* 使用负边距来减少与上方内容的距离 */
+  margin-top: -3rem;
+  /* 使用负边距来减少与上方内容的距离 */
 }
 
 /* 添加这个新的类 */
 .section-docs {
-  margin-top: -5rem;  /* 使用负边距来减少与上方内容的距离 */
+  margin-top: -5rem;
+  /* 使用负边距来减少与上方内容的距离 */
 }
 
 /* 卡片里的 code 样式 */
@@ -333,7 +318,8 @@ main {
 
 .footer {
   margin-top: 0;
-  padding-top: 2rem; /* 根据需要调整 */
+  padding-top: 2rem;
+  /* 根据需要调整 */
 }
 
 .logo-img {
@@ -346,6 +332,7 @@ main {
     max-width: 24px;
   }
 }
+
 /* 保持原有的卡片样式 */
 .card {
   background-color: #ffffff;
@@ -359,7 +346,8 @@ main {
 
 /* FAQ 栏目的样式调整 */
 #faq .bg-white {
-  width: 100%; /* 确保 FAQ 内容占满容器宽度 */
+  width: 100%;
+  /* 确保 FAQ 内容占满容器宽度 */
 }
 
 .faq-item {
@@ -372,7 +360,8 @@ main {
 }
 
 .faq-question {
-  padding: 1rem 2rem; /* 为问题添加适当的内边距 */
+  padding: 1rem 2rem;
+  /* 为问题添加适当的内边距 */
   cursor: pointer;
   display: flex;
   justify-content: space-between;
@@ -381,10 +370,13 @@ main {
 }
 
 .faq-answer {
-  padding: 0 2rem 1rem 2rem; /* 为答案添加内边距，但上边距为0 */
-  display: none; /* 默认隐藏答案 */
+  padding: 0 2rem 1rem 2rem;
+  /* 为答案添加内边距，但上边距为0 */
+  display: none;
+  /* 默认隐藏答案 */
 }
 
 .faq-answer.active {
-  display: block; /* 显示带有 active 类的答案 */
+  display: block;
+  /* 显示带有 active 类的答案 */
 }

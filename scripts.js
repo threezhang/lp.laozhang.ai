@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   // FAQ 功能
   const faqQuestions = document.querySelectorAll(".faq-question");
   faqQuestions.forEach((question) => {
@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const answer = question.nextElementSibling;
       question.classList.toggle("active");
       answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
-      
+
       // 关闭其他打开的问题
       faqQuestions.forEach((q) => {
         if (q !== question) {
@@ -35,4 +35,14 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
   });
+});
+
+// 加载动画
+window.addEventListener('load', function () {
+  var loadingOverlay = document.getElementById('loading-overlay');
+  loadingOverlay.style.opacity = '0';
+  loadingOverlay.style.transition = 'opacity 0.5s ease';
+  setTimeout(function () {
+    loadingOverlay.style.display = 'none';
+  }, 500);
 });
