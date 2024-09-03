@@ -182,20 +182,31 @@ html {
   display: flex;
   align-items: center;
   padding: 0.5rem;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
-  font-size: 0.9rem;
+  font-size: 0.95rem; /* 稍微增加字体大小 */
+  font-weight: 500; /* 略微加粗字体 */
+  transition: all 0.3s ease;
+  border-radius: 4px; /* 添加圆角 */
 }
 
-.nav-link i {
-  margin-right: 0.25rem;
-  font-size: 0.9rem;
+.nav-icon {
+  width: 18px;  /* 稍微增加图标大小 */
+  height: 18px; /* 保持宽高比 */
+  vertical-align: middle;
+  margin-right: 0.4em; /* 稍微减少图标和文字之间的间距 */
+  fill: currentColor; /* 使用文本颜色 */
+  transition: all 0.3s ease; /* 添加过渡效果 */
 }
 
+/* 修改悬停效果 */
 .nav-link:hover,
 .nav-link.active {
-  background-color: var(--primary-color);
-  color: white;
+  color: white; /* 文字变为白色 */
+  background-color: var(--primary-color); /* 背景变为主色调 */
+}
+
+.nav-link:hover .nav-icon,
+.nav-link.active .nav-icon {
+  fill: white; /* 确保悬停状态下图标颜色为白色 */
 }
 
 main {
@@ -275,6 +286,10 @@ main {
 
   .mobile-nav {
     display: flex;
+  }
+
+  .desktop-only {
+    display: none;
   }
 }
 
@@ -379,4 +394,17 @@ main {
 .faq-answer.active {
   display: block;
   /* 显示带有 active 类的答案 */
+}
+
+.nav-icon {
+  width: 16px;  /* 或者使用具体的像素值，如 16px */
+  height: 16px; /* 保持宽高比 */
+  vertical-align: middle;
+  margin-right: 0.5em; /* 图标和文字之间的间距 */
+  fill: currentColor; /* 使用文本颜色 */
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
 }
