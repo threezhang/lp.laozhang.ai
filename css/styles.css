@@ -194,7 +194,7 @@ html {
   vertical-align: middle;
   margin-right: 0.4em; /* 稍微减少图标和文字之间的间距 */
   fill: currentColor; /* 使用文本颜色 */
-  transition: all 0.3s ease; /* 添加过渡效果 */
+  transition: filter 0.3s ease; /* 添加过渡效果 */
 }
 
 /* 修改悬停效果 */
@@ -206,7 +206,7 @@ html {
 
 .nav-link:hover .nav-icon,
 .nav-link.active .nav-icon {
-  fill: white; /* 确保悬停状态下图标颜色为白色 */
+  filter: brightness(0) invert(1); /* 将图标变为白色 */
 }
 
 main {
