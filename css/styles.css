@@ -138,8 +138,36 @@ body {
   padding-top: 58px;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
   min-height: -webkit-fill-available;
+  min-height: 100vh;
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(230, 244, 255, 0.95) 20%,
+    rgba(236, 253, 245, 0.95) 40%,
+    rgba(239, 246, 255, 0.95) 60%,
+    rgba(255, 255, 255, 0.95) 80%,
+    rgba(240, 249, 255, 0.95) 100%
+  );
+  background-attachment: fixed;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: 
+    radial-gradient(circle at 0% 0%, rgba(99, 102, 241, 0.15) 0, transparent 50%),
+    radial-gradient(circle at 100% 0%, rgba(37, 99, 235, 0.15) 0, transparent 50%),
+    radial-gradient(circle at 100% 100%, rgba(147, 197, 253, 0.15) 0, transparent 50%),
+    radial-gradient(circle at 0% 100%, rgba(192, 132, 252, 0.15) 0, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(56, 189, 248, 0.1) 0, transparent 50%);
+  pointer-events: none;
+  animation: gradientAnimation 15s ease infinite;
 }
 
 html {
@@ -213,13 +241,23 @@ main {
   flex: 1 0 auto;
   margin-top: 20px;
   margin-bottom: 10px;
+  background-color: transparent;
+  position: relative;
+  z-index: 1;
 }
 
 .footer {
-  background-color: #2d3748;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(45, 55, 72, 0.95) 100%
+  );
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  margin-top: 0;
+  padding-top: 4rem;
   color: #e2e8f0;
   padding: 2rem 0;
-  margin-top: 2rem;
 }
 
 .footer-container {
@@ -301,7 +339,11 @@ main {
 
 /* 添加这个样式来恢复浅色背景 */
 .bg-light {
-  background-color: #f0f4f8;
+  background-color: transparent;
+}
+
+.bg-white {
+  background-color: transparent !important;
 }
 
 .title-h2 {
@@ -361,8 +403,7 @@ main {
 
 /* FAQ 栏目的样式调整 */
 #faq .bg-white {
-  width: 100%;
-  /* 确保 FAQ 内容占满容器宽度 */
+  background-color: transparent;
 }
 
 .faq-item {
@@ -407,4 +448,148 @@ main {
 .nav-link {
   display: flex;
   align-items: center;
+}
+
+/* 调整卡片样式以配合新背景 */
+.card {
+  background-color: rgba(255, 255, 255, 0.7);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* 调整导航栏样式 */
+.navbar {
+  background-color: rgba(255, 255, 255, 0.8);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+/* 调整页脚样式 */
+.footer {
+  background-color: rgba(45, 55, 72, 0.95);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+/* 修改 header 相关样式 */
+header.bg-white {
+    background-color: transparent !important; /* 移除白色背景 */
+}
+
+/* 调整标题和内容的可见性 */
+.api-title {
+    color: #1a202c;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 2;
+}
+
+/* 调整首屏卡片的样式 */
+.card-gradient-1,
+.card-gradient-2,
+.card-gradient-3 {
+    background: rgba(255, 255, 255, 0.7);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    position: relative;
+    z-index: 2;
+}
+
+.card-gradient-1:hover,
+.card-gradient-2:hover,
+.card-gradient-3:hover {
+    background: rgba(255, 255, 255, 0.8);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* 调整首屏文字描述的样式 */
+header .text-xl {
+    color: #2d3748;
+    position: relative;
+    z-index: 2;
+}
+
+/* 确保内容在渐变背景之上 */
+.container {
+    position: relative;
+    z-index: 2;
+}
+
+/* 添加背景动画 */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+/* 调整首屏卡片样式，让它们更加炫彩 */
+.card-gradient-1 {
+    background: linear-gradient(135deg, rgba(255, 170, 0, 0.8) 0%, rgba(255, 140, 0, 0.8) 100%);
+    border: none;
+}
+
+.card-gradient-2 {
+    background: linear-gradient(135deg, rgba(72, 187, 120, 0.8) 0%, rgba(56, 161, 105, 0.8) 100%);
+    border: none;
+}
+
+.card-gradient-3 {
+    background: linear-gradient(135deg, rgba(66, 153, 225, 0.8) 0%, rgba(49, 130, 206, 0.8) 100%);
+    border: none;
+}
+
+/* 增强卡片悬停效果 */
+.card-gradient-1:hover,
+.card-gradient-2:hover,
+.card-gradient-3:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+    background-position: right center;
+}
+
+/* 调整标题样式 */
+.api-title {
+    background: linear-gradient(45deg, #2563eb, #3b82f6, #60a5fa);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: none;
+    font-weight: 800;
+}
+
+/* 调整导航栏样式 */
+.navbar {
+    background: rgba(255, 255, 255, 0.8);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* 调整按钮样式 */
+.primary-button {
+    background: linear-gradient(45deg, #2563eb, #3b82f6);
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+    transition: all 0.3s ease;
+}
+
+.primary-button:hover {
+    background: linear-gradient(45deg, #1d4ed8, #2563eb);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
 }
