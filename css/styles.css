@@ -563,7 +563,7 @@ header .text-xl {
     background-position: right center;
 }
 
-/* 调整标题样式 */
+/* 调整标题式 */
 .api-title {
     background: linear-gradient(45deg, #2563eb, #3b82f6, #60a5fa);
     -webkit-background-clip: text;
@@ -592,4 +592,467 @@ header .text-xl {
     background: linear-gradient(45deg, #1d4ed8, #2563eb);
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+}
+
+/* 使用指南区块样式 */
+.usage-section {
+    position: relative;
+    z-index: 2;
+}
+
+.usage-card {
+    background: rgba(255, 255, 255, 0.8);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+.usage-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.code-block {
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', monospace;
+    line-height: 1.5;
+    position: relative;
+}
+
+.code-block code {
+    white-space: pre-wrap;
+    word-break: break-all;
+}
+
+.step-item {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background: rgba(255, 255, 255, 0.5);
+    margin-bottom: 1rem;
+}
+
+.step-item:last-child {
+    margin-bottom: 0;
+}
+
+/* 代码切换标签样式 */
+.code-tabs {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.code-tab-btn {
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #4a5568;
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(203, 213, 224, 0.5);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.code-tab-btn:hover {
+    background: rgba(255, 255, 255, 0.8);
+    border-color: rgba(160, 174, 192, 0.8);
+}
+
+.code-tab-btn.active {
+    background: #2563eb;
+    color: white;
+    border-color: transparent;
+}
+
+/* 代码内容切换 */
+.code-content {
+    display: none;
+}
+
+.code-content.active {
+    display: block;
+}
+
+/* 优化代码块样式 */
+.code-block {
+    background: #1a202c;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.75rem; /* 更小的字号 */
+    line-height: 1.4; /* 更紧凑的行高 */
+}
+
+.code-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* 代码切换按钮样式 */
+.code-tabs {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.code-switch-btn {
+    background: none;
+    border: none;
+    color: #a0aec0;
+    font-size: 0.75rem;
+    cursor: pointer;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    transition: all 0.2s ease;
+}
+
+.code-switch-btn:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.code-switch-btn.active {
+    color: white;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.code-divider {
+    color: #4a5568;
+}
+
+/* 复制按钮样式优化 */
+.copy-button {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* 代码内容样式 */
+.code-content {
+    display: none;
+    margin: 0;
+    padding: 0;
+}
+
+.code-content.active {
+    display: block;
+}
+
+.code-content code {
+    font-family: 'Fira Code', 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+}
+
+/* 优化代码头部样式 */
+.code-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;  /* 减小内边距 */
+    margin-bottom: 12px;  /* 减小底部间距 */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    height: 36px;  /* 固定高度 */
+    box-sizing: border-box;
+}
+
+/* 优化代码块容器 */
+.code-block {
+    background: #1a202c;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.75rem;
+    line-height: 1.4;
+    padding: 0;  /* 移除默认内边距 */
+    border-radius: 0.5rem;
+    overflow: hidden;  /* 确保内容不会溢出 */
+}
+
+/* 代码内容区域 */
+.code-content {
+    padding: 0 12px 12px;  /* 只给内容区域添加内边距 */
+}
+
+/* 调整使用指南区块的间距 */
+.usage-section {
+    padding-top: 4rem;  /* 增加顶部间距 */
+    padding-bottom: 3rem;  /* 保持底部间距 */
+}
+
+/* 调整代码切换按钮和复制按钮的样式 */
+.code-switch-btn, .copy-button {
+    height: 24px;  /* 统一按钮高度 */
+    line-height: 24px;  /* 确保文字垂直居中 */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+}
+
+/* 隔样式 */
+.code-divider {
+    height: 24px;
+    line-height: 24px;
+    display: inline-flex;
+    align-items: center;
+    padding: 0 4px;
+}
+
+/* 复制按钮图标对齐 */
+.copy-button svg {
+    margin-top: -1px;  /* 微调图标位置 */
+}
+
+/* 调整代码区块的标题 */
+.usage-card h3 {
+    margin-bottom: 1.5rem;  /* 增加标题下间距 */
+}
+
+/* 调整代码区块的整体内边距 */
+.usage-card {
+    padding: 1.5rem;  /* 增加卡片的内边距 */
+}
+
+/* 代码选择器样式 */
+.code-selector {
+  position: relative;
+}
+
+.code-dropdown-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  color: #fff;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.code-dropdown-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.dropdown-arrow {
+  transition: transform 0.2s ease;
+}
+
+.code-dropdown-btn.active .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+.code-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 4px;
+  background: #2d3748;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  padding: 4px 0;
+  min-width: 120px;
+  display: none;
+  z-index: 10;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.code-dropdown-menu.show {
+  display: block;
+}
+
+.code-option {
+  display: block;
+  width: 100%;
+  padding: 6px 12px;
+  text-align: left;
+  background: none;
+  border: none;
+  color: #a0aec0;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.code-option:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.code-option.active {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+
+/* 调整代码头部样式 */
+.code-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  height: 36px;
+  box-sizing: border-box;
+}
+
+/* 价格说明区块样式 */
+.pricing-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.pricing-icon {
+  font-size: 2rem;
+}
+
+.price-details, .model-prices, .benefits {
+  width: 100%;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 120px;
+}
+
+.detail-item,
+.principle-item,
+.benefit-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  height: 40px;
+  box-sizing: border-box;
+  flex: 1;
+}
+
+.detail-item:last-child,
+.principle-item:last-child,
+.benefit-item:last-child {
+  border-bottom: none;
+}
+
+.model-name {
+  font-family: monospace;
+  font-weight: 500;
+}
+
+.price {
+  color: #2563eb;
+  font-weight: 500;
+}
+
+.pricing-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* 价格标签样式 */
+.price-tag {
+  background: linear-gradient(45deg, #2563eb, #3b82f6);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* 定价原则卡片样式 */
+.pricing-principles {
+  width: 100%;
+  text-align: left;
+  height: 100%; /* 确保内容区域填满 */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.principle-item {
+  padding: 0.75rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.principle-label {
+  font-weight: 500;
+  color: #2d3748;
+  font-size: 0.875rem;
+}
+
+.principle-content {
+  font-weight: 500;
+  color: #ed8936;
+  font-size: 0.875rem;
+}
+
+.principle-item:last-child {
+  border-bottom: none;
+}
+
+/* 统一文字大小和颜色 */
+.detail-item span,
+.principle-label,
+.principle-content,
+.benefit-item span {
+  font-size: 0.875rem;
+  line-height: 1.25;
+}
+
+/* 统一价格卡片的内容样式 */
+.detail-item,
+.principle-item,
+.benefit-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    height: 40px;
+    box-sizing: border-box;
+}
+
+/* 统一左侧文字样式 */
+.detail-item span:first-child,
+.principle-label,
+.benefit-item span:first-child {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #2d3748;
+}
+
+/* 统一右侧文字样式 */
+.detail-item span:last-child {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #48bb78; /* 绿色 */
+}
+
+.principle-content {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #ed8936; /* 橙色 */
+}
+
+.benefit-item span:last-child {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #3b82f6; /* 蓝色 */
+}
+
+/* 移除多余的样式 */
+.model-name,
+.price,
+.price-tag {
+    display: none;
 }

@@ -138,11 +138,6 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="https://www.apiyi.com/query" class="nav-link" target="_blank" rel="noopener">
-                <img src="images/icons/check.svg" alt="查询" class="nav-icon"> 查询
-              </a>
-            </li>
-            <li class="nav-item">
               <a href="https://www.apiyi.com/status" class="nav-link" target="_blank" rel="noopener">
                 <img src="images/icons/status.svg" alt="状态" class="nav-icon"> 状态
               </a>
@@ -220,11 +215,145 @@
           >
           <br />
           <p class="mt-4 text-sm">
-            (注册即自动赠送约 1 万的 gpt-4o Tokens，确保能跑通*)
+            (注册即自动赠送约 1 万的 gpt-4o Tokens确保能跑通*)
           </p>
         </div>
       </div>
     </header>
+    <!-- 在 header 和 快速开始section 之间添加新区块 -->
+    <section class="usage-section py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-4 text-center">两种典型使用场景</h2>
+        <p class="text-xl text-gray-600 text-center mb-12 max-w-3xl mx-auto">
+          3 分钟可以跑通的 OpenAI、Claude API 调用，天下武功，唯快不破。
+          <br>本站可能是对 API 新手最友好的网站：API易。
+        </p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          <!-- 代码调用卡片 -->
+          <div class="card usage-card p-6">
+            <h3 class="text-xl font-semibold mb-4">
+              <span class="inline-block mr-2">💻</span>代码调用
+            </h3>
+
+            <!-- 代码块 -->
+            <div class="code-block bg-gray-900 text-white p-4 rounded-lg mb-4 overflow-x-auto">
+              <div class="code-header">
+                <div class="code-selector">
+                  <button class="code-dropdown-btn">
+                    <span class="selected-language">Curl</span>
+                    <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6">
+                      <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                    </svg>
+                  </button>
+                  <div class="code-dropdown-menu">
+                    <button class="code-option active" data-tab="curl">Curl</button>
+                    <button class="code-option" data-tab="nodejs">Node.js</button>
+                    <button class="code-option" data-tab="python">Python</button>
+                  </div>
+                </div>
+                <button class="copy-button" data-clipboard-target="#current-code">
+                  <svg class="copy-icon" viewBox="0 0 24 24" width="14" height="14">
+                    <path fill="currentColor" d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+                  </svg>
+                  <span>复制</span>
+                </button>
+              </div>
+              <!-- Curl 代码 -->
+              <pre class="text-xs code-content active" id="curl-code"><code id="current-code">curl https://vip.apiyi.com/v1/chat/completions \
+-H "Content-Type: application/json" \
+-H "Authorization: Bearer YOUR_API_KEY" \
+-d '{
+  "model": "gpt-4o",
+  "messages": [
+    {"role": "user", "content": "write a haiku about ai"}
+  ]
+}'</code></pre>
+              <!-- Node.js 代码 -->
+              <pre class="text-xs code-content" id="nodejs-code"><code>import OpenAI from "openai";
+
+const openai = new OpenAI({
+  apiKey: "YOUR_API_KEY",
+  baseURL: "https://vip.apiyi.com/v1"
+});
+
+const completion = await openai.chat.completions.create({
+  model: "gpt-4o",
+  messages: [
+    {"role": "user", "content": "write a haiku about ai"}
+  ]
+});</code></pre>
+              <!-- Python 代码 -->
+              <pre class="text-xs code-content" id="python-code"><code>from openai import OpenAI
+
+client = OpenAI(
+    api_key="YOUR_API_KEY",
+    base_url="https://vip.apiyi.com/v1"
+)
+
+completion = client.chat.completions.create(
+    model="gpt-4o",
+    messages=[
+        {"role": "user", "content": "write a haiku about ai"}
+    ]
+)</code></pre>
+            </div>
+
+            <div class="text-sm text-gray-600 mt-4">
+              <p class="mb-2">
+                👉 获取 API Key？
+                <a href="https://www.apiyi.com/token" class="text-blue-600 hover:underline" target="_blank" rel="noopener">
+                  点击查看令牌
+                </a>
+              </p>
+              <p>
+                📝 更多示例代码、最佳实践，
+                <a href="https://help.apiyi.com/how-to-get-openai-claude-api-example-code.html" class="text-blue-600 hover:underline" target="_blank" rel="noopener">
+                  请看博客 >>
+                </a>
+              </p>
+            </div>
+          </div>
+
+          <!-- 第三方工具使用卡片 -->
+          <div class="card usage-card p-6">
+            <h3 class="text-xl font-semibold mb-4">
+              <span class="inline-block mr-2">🔧</span>第三方工具使用
+            </h3>
+            <div class="steps-block">
+              <div class="step-item mb-4">
+                <h4 class="font-medium mb-2">1. 配置本站的 Key</h4>
+                <p class="text-gray-600">
+                  在第三方工具的设置中填入从
+                  <a href="https://www.apiyi.com/token" class="text-blue-600 hover:underline" target="_blank" rel="noopener">
+                    API易获取的密钥
+                  </a>
+                </p>
+              </div>
+              <div class="step-item">
+                <h4 class="font-medium mb-2">2. 修改代理地址</h4>
+                <p class="text-gray-600">
+                  将API地址修改为：
+                  <code class="bg-gray-100 px-2 py-1 rounded">https://vip.apiyi.com</code>
+                </p>
+              </div>
+            </div>
+            
+            <div class="text-sm text-gray-600 mt-4">
+              <p class="mb-2">
+                👨‍💻 99%用户已跑通，遇到卡点截图发给客服微信：8765058
+              </p>
+              <p>
+                📚 更多教程 >>
+                <a href="https://help.apiyi.com" class="text-blue-600 hover:underline" target="_blank" rel="noopener">
+                  API易 帮助中心
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <main class="bg-light">
       <section class="mb-16 title-h2">
@@ -348,7 +477,7 @@
           <div class="card p-8 tech-border">
             <h3 class="text-2xl font-semibold mb-4">🔍 6、附：API 支持的场景</h3>
             <ul class="list-disc list-inside space-y-2">
-              <li>官方代码示例和本站提供的代码示例，任何支持填写 API 代理地址的第三方封装程序；</li>
+              <li>官方代码示例本站供的代码示例，任何支持填写 API 代理地址的第三方封装程序；</li>
               <li>
                 GitHub上大多数开源OpenAI第三方"对话聊天"程序（如ChatGPT Next
                 Web、Lobe Chat等）；
@@ -379,6 +508,86 @@
           >
         </div>
       </section>
+
+          <!-- 在 FAQ 区块前，快速开始区块后添加价格说明板块 -->
+    <section class="pricing-section mb-16">
+      <h2 class="text-3xl font-bold mb-8 text-center">价格说明</h2>
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- 价格特点卡片 -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+          <!-- 充值优惠卡片 -->
+          <div class="card pricing-card p-6 text-center">
+            <div class="pricing-icon mb-4">💰</div>
+            <h3 class="text-xl font-semibold mb-3">充值优惠</h3>
+            <div class="price-details">
+              <div class="detail-item">
+                <span class="text-sm">充值5美金</span>
+                <span class="text-green-500">35 元</span>
+              </div>
+              <div class="detail-item">
+                <span class="text-sm">充值50美金</span>
+                <span class="text-green-500">+5美金赠送</span>
+              </div>
+              <div class="detail-item">
+                <span class="text-sm">充值100美金</span>
+                <span class="text-green-500">+15美金赠送</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 修改定价原则卡片部分 -->
+          <div class="card pricing-card p-6 text-center">
+            <div class="pricing-icon mb-4">📊</div>
+            <h3 class="text-xl font-semibold mb-3">定价原则</h3>
+            <div class="pricing-principles">
+              <div class="principle-item">
+                <span class="principle-label">原则一：</span>
+                <span class="principle-content">模型齐全 上新相对快</span>
+              </div>
+              <div class="principle-item">
+                <span class="principle-label">原则二：</span>
+                <span class="principle-content">消耗机制 与官方一致</span>
+              </div>
+              <div class="principle-item">
+                <span class="principle-label">原则三：</span>
+                <span class="principle-content">充值加赠 超高性价比</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 新用户福利卡片 -->
+          <div class="card pricing-card p-6 text-center">
+            <div class="pricing-icon mb-4">🎁</div>
+            <h3 class="text-xl font-semibold mb-3">新用户福利</h3>
+            <div class="benefits">
+              <div class="benefit-item">
+                <span>注册即送</span>
+                <span class="text-blue-500">0.1美金</span>
+              </div>
+              <div class="benefit-item">
+                <span>加微信赠送</span>
+                <span class="text-blue-500">1美金</span>
+              </div>
+              <div class="benefit-item">
+                <span>高校师生特惠</span>
+                <span class="text-blue-500">5美金</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 补充说明 -->
+        <div class="text-center mb-8">
+          <a href="https://www.apiyi.com/account/pricing" target="_blank" rel="noopener" class="inline-flex items-center text-blue-600 hover:underline">
+            <span>查看完整价格表</span>
+            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
 
       <section id="faq" class="mb-16">
         <h2 class="text-3xl font-bold mb-12 text-center title-little">API易 - 常见问题</h2>
@@ -413,13 +622,13 @@
                   <li>
                     🚀
                     <strong>自由：</strong
-                    >没有官方网络与调用次数限制，支持数万并发，企业级 API 品质；
+                    >没有官方网与调用次数限制，支持数万并发，企业级 API 品质；
                   </li>
                   <li>
                     🌐
                     <strong>聚合</strong>汇聚多个大模型，统一对接格式，如 Claude
                     使用 OpenAI
-                    的格式，只需要换模型名称即可。并将逐步接入更多模型。
+                    的格式，只需要换模型名称即可。并将逐步接入更多模。
                   </li>
                 </ul>
               </div>
@@ -496,13 +705,13 @@
               <div class="faq-answer">
                 科普下：Plus 和 API 是两个体系，完全独立分开的。 在OpenAI
                 官网开发后台 API Key 地方，验证了海外手机号码也用不了
-                API，还是需要充值额度的（需要海外信用卡，很麻烦）。本站也另外提供直连 API
-                代充服务，但价格相对高，远没有中转站性价比高。
+                API，还是需要值额度的（需要海外信用卡，很麻烦）。本站也另外提供直连 API
+                代充服务，��价格相对高，远没有中转站性价比高。
               </div>
             </div>
             <div class="faq-item">
               <div class="faq-question">
-                9）API易 如何处理内容安全合规性问题？
+                9）API易 如何处理内容安全合规性题？
                 <span class="toggle-icon">+</span>
               </div>
               <div class="faq-answer">
@@ -524,7 +733,7 @@
                 API易高度重视用户数据安全，采取了多重措施保护您的信息：
                 <ul class="list-disc pl-5 mt-2">
                   <li><strong>端到端加密</strong>所有数据传输均采用TLS 1.3协议加密，确保数据在传过程中的安全。</li>
-                  <li><strong>最小化数据存储</strong>：API易 仅为中转平台，不会存储或查看您的API请求内容（输入和输出）。</li>
+                  <li><strong>最小化数据存储</strong>：API易 仅为中转平台，不会存储或查看您的API请求内容（入和输出）。</li>
                   <li><strong>有限日志记录</strong>：API易 只记录基础日志包括使用的模型和Tokens长度，用于故障排查和计费。日志不包含具体内容。</li>
                   <li><strong>短期日志保留</strong>：出于客户数据安全考虑和资源优化（磁盘空间也要钱~~），日志仅保留7天。</li>
                   <li><strong>严格访问控制</strong>：只有经过授权的技术人员才能在必要时访问匿名化的日志数据。</li>
@@ -545,7 +754,7 @@
         target="_blank"
         rel="noopener noreferrer"
         class="primary-button"
-        >立即免费注册API易</a
+        >立即免费注册API</a
       >
       <p class="mt-4 text-sm">
         (每个用户均自动赠送1万的gpt-4o Tokens，确保能跑通)
@@ -554,7 +763,7 @@
     <footer class="footer">
       <div class="footer-container text-center">
         <p class="footer-text">
-          备用API接口（免 Cloudflare 盾，部分地区调用速度更快）：<code class="footer-code-highlight">https://vip.apiyi.com</code>
+          备用API接口（免 Cloudflare 盾，部地区调用速度更快）：<code class="footer-code-highlight">https://vip.apiyi.com</code>
         </p>
         <p class="footer-text">
           @2024 API易 All rights reserved |
