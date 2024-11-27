@@ -214,12 +214,27 @@
             >立即免费注册</a
           >
           <br />
-          <p class="mt-4 text-sm">
+          <p class="mt-4 mb-8 text-sm">
             (注册即自动赠送约 1 万的 gpt-4o Tokens确保能跑通*)
           </p>
         </div>
       </div>
     </header>
+    
+    <!-- 调整 AI Logo 横幅的位置 -->
+    <section class="ai-logos-banner mb-4">
+      <div class="container mx-auto px-4">
+        <div class="flex justify-center items-center">
+          <img 
+            src="images/ai-logos.png" 
+            alt="AI 合作伙伴标志" 
+            class="w-full max-w-5xl mx-auto"
+            loading="lazy"
+          >
+        </div>
+      </div>
+    </section>
+
     <!-- 在 header 和 快速开始section 之间添加新区块 -->
     <section class="usage-section py-16">
       <div class="container mx-auto px-4">
@@ -375,11 +390,11 @@ completion = client.chat.completions.create(
             </div>
           <div class="card p-8 tech-border">
             <h3 class="text-2xl font-semibold mb-4">
-              🔄 3、修改代码的请求地址
+              ���� 3、修改代码的请求地址
             </h3>
             <p class="mb-4">
               <strong>调用方式</strong>：只需要将请求地址和 Key
-              修改，其他与 OpenAI 官方完全一致，简单来说：将
+              修改其他与 OpenAI 官方完全一致，简单来说：将
               <code class="code-highlight">https://api.openai.com</code>
               全局替换改成
               <code class="code-highlight">https://vip.apiyi.com</code
@@ -431,7 +446,7 @@ completion = client.chat.completions.create(
               通过前三步，快速跑通。而后台的<a href="https://www.apiyi.com/log" target="_blank" rel="noopener" class="text-blue-600 hover:underline"> 日志 </a>栏目，可以查看每次调用的详细日志。每一次请求的消耗清清楚楚。
             </p>
             <p class="mt-2">
-              新户注册赠送的额度用完后，可以随时在线通过微信/支付宝充值，余额即刻到账，可继续调用 API。
+              新户注册赠送的额度用完后，可以随时在线过微信/支付宝充值，余额即刻到账，可继续调用 API。
             </p>
           </div>
           <div class="card p-8 tech-border">
@@ -735,9 +750,9 @@ completion = client.chat.completions.create(
                   <li><strong>端到端加密</strong>所有数据传输均采用TLS 1.3协议加密，确保数据在传过程中的安全。</li>
                   <li><strong>最小化数据存储</strong>：API易 仅为中转平台，不会存储或查看您的API请求内容（入和输出）。</li>
                   <li><strong>有限日志记录</strong>：API易 只记录基础日志包括使用的模型和Tokens长度，用于故障排查和计费。日志不包含具体内容。</li>
-                  <li><strong>短期日志保留</strong>：出于客户数据安全考虑和资源优化（磁盘空间也要钱~~），日志仅保留7天。</li>
+                  <li><strong>短��日志保留</strong>：出于客户数据安全考虑和资源优化（磁盘空间也要钱~~），日志仅保留7天。</li>
                   <li><strong>严格访问控制</strong>：只有经过授权的技术人员才能在必要时访问匿名化的日志数据。</li>
-                  <li><strong>定期安全审计</strong>：API易 团队会定期进安全评估和更，以应对新的安全挑战。</li>
+                  <li><strong>定期安全审计</strong>：API易 团队会定期进安全评和更，以应对新的安全挑战。</li>
                   <li><strong>合规性</strong>：API易 团队严格遵守相关的数据保护法规和行业标准。</li>
                 </ul>
                 <p class="mt-4">如果您对数据安全有任何疑问，欢迎联系我们的技术支持团队。</p>

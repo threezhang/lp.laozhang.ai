@@ -479,7 +479,7 @@ main {
   backdrop-filter: blur(10px);
 }
 
-/* 修改 header 相关样式 */
+/* 修改 header 相关 */
 header.bg-white {
     background-color: transparent !important; /* 移除白色背景 */
 }
@@ -780,7 +780,7 @@ header .text-xl {
 /* 调整使用指南区块的间距 */
 .usage-section {
     padding-top: 4rem;  /* 增加顶部间距 */
-    padding-bottom: 3rem;  /* 保持底��间距 */
+    padding-bottom: 3rem;  /* 保底部间距 */
 }
 
 /* 调整代码切换按钮和复制按钮的样式 */
@@ -1075,4 +1075,30 @@ header .text-xl {
 /* 确保标题可见 */
 .pricing-section h2 {
     margin-top: 0;
+}
+
+.ai-logos-banner {
+  padding: 0.5rem 0 0.25rem;  /* 减小底部内边距 */
+  background: transparent;
+  margin-top: -3rem;
+}
+
+.ai-logos-banner img {
+  opacity: 0.85; /* 稍微调整透明度 */
+  transition: opacity 0.3s ease;
+  filter: grayscale(15%); /* 添加轻微灰度效果使其更协调 */
+  max-width: 80%;  /* 将 100% 改为 80%，等比缩小图片 */
+  height: auto;
+}
+
+.ai-logos-banner img:hover {
+  opacity: 1;
+  filter: grayscale(0%); /* hover 时恢复原始颜色 */
+}
+
+/* 调整容器样式确保图片居中显示 */
+.ai-logos-banner .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
