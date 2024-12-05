@@ -1,5 +1,18 @@
 {
   "extends": [
     "development"
-  ]
+  ],
+  "hints": {
+    "compat-api/css": [
+      "default",
+      {
+        "ignore": [
+          "overscroll-behavior-y",
+          "overscroll-behavior-x",
+          "overscroll-behavior-x: none",
+          "-webkit-text-size-adjust"
+        ]
+      }
+    ]
+  }
 }
