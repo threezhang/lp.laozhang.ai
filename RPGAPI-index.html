@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RPGAPI - 专业的 AI 角色扮演 API 服务平台</title>
+    
+    <!-- SEO Meta 标签 -->
+    <meta name="description" content="RPGAPI 是专业的 AI 角色扮演 API 服务平台，为 Character AI、JanitorAI、Replika 等角色扮演平台提供稳定、快速的 API 接入服务。支持 Gemini、Claude、Grok 等大模型，打造沉浸式的 AI 互动体验。" />
+    <meta name="keywords" content="RPGAPI, AI角色扮演, Character AI API, JanitorAI API, Replika API, Chai AI, AI API, Gemini API, Claude API, Grok API" />
+    <meta name="author" content="RPGAPI" />
+    
+    <!-- Open Graph Meta 标签 -->
+    <meta property="og:title" content="RPGAPI - 专业的 AI 角色扮演 API 服务平台" />
+    <meta property="og:description" content="为 AI 角色扮演平台提供稳定、快速的 API 服务，支持 Gemini、Claude、Grok 等大模型，打造沉浸式的 AI 互动体验。" />
+    <meta property="og:image" content="https://www.rpgapi.com/images/logo.png" />
+    <meta property="og:url" content="https://www.rpgapi.com" />
+    
+    <!-- Twitter Card Meta 标签 -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="RPGAPI - 专业的 AI 角色扮演 API 服务平台" />
+    <meta name="twitter:description" content="为 AI 角色扮演平台提供稳定、快速的 API 服务，支持主流大模型，打造沉浸式的 AI 互动体验。" />
+    <meta name="twitter:image" content="https://www.rpgapi.com/images/logo.png" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/logo.png" />
+    <link rel="apple-touch-icon" href="images/logo.png" />
+
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+      :root {
+        --primary-purple: #8B5CF6;
+        --light-purple: #EDE9FE;
+      }
+
+      /* 导航栏固定样式 */
+      .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background-color: white;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        z-index: 1000;
+        height: 64px;
+        display: flex;
+        align-items: center;
+        padding-top: env(safe-area-inset-top);
+      }
+
+      /* 加载动画 */
+      .loading-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+      }
+
+      .loading-spinner {
+        width: 50px;
+        height: 50px;
+        border: 3px solid #f3f3f3;
+        border-top: 3px solid var(--primary-purple);
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+
+      /* 卡片悬停效果 */
+      .feature-card {
+        transition: transform 0.3s ease;
+      }
+
+      .feature-card:hover {
+        transform: translateY(-5px);
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50">
+    <!-- 加载动画 -->
+    <div id="loading-overlay" class="loading-overlay">
+      <div class="loading-spinner"></div>
+    </div>
+
+    <!-- 导航栏 -->
+    <nav class="navbar">
+      <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center">
+          <div class="flex items-center">
+            <a href="/" class="flex items-center">
+              <img src="images/logo.png" alt="RPGAPI Logo" class="h-8 w-8 mr-2" />
+              <span class="text-xl font-bold text-purple-600">RPGAPI</span>
+            </a>
+          </div>
+          <div class="hidden md:flex items-center space-x-8">
+            <a href="#platforms" class="text-gray-600 hover:text-purple-600">支持平台</a>
+            <a href="#pricing" class="text-gray-600 hover:text-purple-600">模型价格</a>
+            <a href="#features" class="text-gray-600 hover:text-purple-600">产品特点</a>
+            <a href="#faq" class="text-gray-600 hover:text-purple-600">常见问题</a>
+            <a href="https://api.rpgapi.com/detail" class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700">控制台</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero区域 -->
+    <section class="pt-32 pb-20 bg-gradient-to-b from-purple-50 to-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center">
+          <h1 class="text-5xl font-bold text-gray-900 mb-6">
+            专注 AI 角色扮演的 API 服务平台
+            <p>
+            为您的 AI 角色注入灵魂
+            </p>
+          </h1>
+          <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+            提供稳定、快速的 Gemini、Claude、Grok API 接入服务，专为 Character AI、JanitorAI、Replika 等角色扮演平台定制。请加 <a href="https://t.me/aiapi666" target="_blank" rel="noopener" class="text-purple-600 hover:text-purple-700">Telegram：@aiapi666</a> 沟通开户、赠送测试额度。
+          </p>
+          <div class="flex justify-center gap-4">
+            <a href="https://api.rpgapi.com/token" target="_blank" rel="noopener" class="bg-purple-600 text-white px-8 py-3 rounded-lg hover:bg-purple-700 transition">
+              创建令牌
+            </a>
+            <a href="https://api.rpgapi.com/log" class="border border-purple-600 text-purple-600 px-8 py-3 rounded-lg hover:bg-purple-50 transition">
+              调用日志
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 支持平台 -->
+    <section id="platforms" class="py-20">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">支持的角色扮演平台举例</h2>
+        <div class="grid md:grid-cols-4 gap-8 max-w-6xl mx-auto">
+          <div class="bg-white p-6 rounded-xl shadow-sm">
+            <h3 class="text-xl font-semibold mb-4">Character AI</h3>
+            <ul class="space-y-2 text-gray-600">
+              <li>✓ 数千个预设角色</li>
+              <li>✓ 全年龄段内容</li>
+              <li>✓ 故事驱动体验</li>
+              <li>✓ 图片生成支持</li>
+            </ul>
+          </div>
+          
+          <div class="bg-white p-6 rounded-xl shadow-sm">
+            <h3 class="text-xl font-semibold mb-4">JanitorAI</h3>
+            <ul class="space-y-2 text-gray-600">
+              <li>✓ 自定义角色创建</li>
+              <li>✓ 多样化场景互动</li>
+              <li>✓ 深度角色定制</li>
+              <li>✓ 社区分享功能</li>
+            </ul>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl shadow-sm">
+            <h3 class="text-xl font-semibold mb-4">Replika</h3>
+            <ul class="space-y-2 text-gray-600">
+              <li>✓ 情感陪伴功能</li>
+              <li>✓ 情绪追踪系统</li>
+              <li>✓ 多语言支持</li>
+              <li>✓ 视频通话集成</li>
+            </ul>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl shadow-sm">
+            <h3 class="text-xl font-semibold mb-4">Chai AI</h3>
+            <ul class="space-y-2 text-gray-600">
+              <li>✓ 1000+ 预设角色</li>
+              <li>✓ 自定义角色系统</li>
+              <li>✓ NSFW内容支持</li>
+              <li>✓ 简洁用户界面</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 价格 -->
+    <section id="pricing" class="py-20 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">API 价格表</h2>
+        
+        <!-- 模型列表 -->
+        <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div class="bg-white p-6 rounded-xl shadow-sm">
+            <h3 class="text-xl font-semibold mb-4">Gemini 系列</h3>
+            <p class="text-2xl font-bold text-purple-600">输入 $2.50<span class="text-sm text-gray-600">/1M tokens</span></p>
+            <p class="text-2xl font-bold text-purple-600">输出 $10.00<span class="text-sm text-gray-600">/1M tokens</span></p>
+            <ul class="mt-4 space-y-2 text-gray-600">
+              <li>✓ gemini-exp-1206</li>
+              <li>✓ gemini-2.0-flash-exp</li>
+              <li>✓ gemini-2.0-fash-thinking-exp</li>
+              <li>✓ 适合角色扮演场景</li>
+            </ul>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl shadow-sm">
+            <h3 class="text-xl font-semibold mb-4">Claude 系列</h3>
+            <p class="text-2xl font-bold text-purple-600">输入 $3.00<span class="text-sm text-gray-600">/1M tokens</span></p>
+            <p class="text-2xl font-bold text-purple-600">输出 $15.00<span class="text-sm text-gray-600">/1M tokens</span></p>
+            <ul class="mt-4 space-y-2 text-gray-600">
+              <li>✓ claude-3-opus</li>
+              <li>✓ claude-3-sonnet</li>
+              <li>✓ claude-3-haiku</li>
+              <li>✓ 优秀的角色塑造能力</li>
+            </ul>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl shadow-sm">
+            <h3 class="text-xl font-semibold mb-4">Grok 系列</h3>
+            <p class="text-2xl font-bold text-purple-600">输入 $2.00<span class="text-sm text-gray-600">/1M tokens</span></p>
+            <p class="text-2xl font-bold text-purple-600">输出 $10.00<span class="text-sm text-gray-600">/1M tokens</span></p>
+            <ul class="mt-4 space-y-2 text-gray-600">
+              <li>✓ grok-2-1212</li>
+              <li>✓ grok-beta</li>
+              <li>✓ 比官网低 33%</li>
+              <li>✓ 擅长幽默对话</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 价格说明 -->
+        <div class="mt-12 text-center">
+          <p class="text-gray-600">
+            价格与官网同步，均按 tokens 用量计费，需 100 美金起充，质量可靠服务稳定
+            <br>
+            <a href="https://t.me/aiapi666" target="_blank" rel="noopener" class="text-purple-600 hover:text-purple-700">
+              联系客服了解更多详情 >>
+            </a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 特点介绍 -->
+    <section id="features" class="py-20">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">为什么选择 RPGAPI</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="feature-card bg-white p-6 rounded-xl shadow-sm">
+            <div class="text-purple-600 text-2xl mb-4">🎭</div>
+            <h3 class="text-xl font-semibold mb-4">专注角色扮演</h3>
+            <p class="text-gray-600">针对角色扮演场景优化的 API 服务，提供更好的角色互动体验</p>
+          </div>
+          <div class="feature-card bg-white p-6 rounded-xl shadow-sm">
+            <div class="text-purple-600 text-2xl mb-4">⚡</div>
+            <h3 class="text-xl font-semibold mb-4">高性能服务</h3>
+            <p class="text-gray-600">全球节点分布，超低延迟响应，支持大规模并发访问</p>
+          </div>
+          <div class="feature-card bg-white p-6 rounded-xl shadow-sm">
+            <div class="text-purple-600 text-2xl mb-4">💰</div>
+            <h3 class="text-xl font-semibold mb-4">成本优势</h3>
+            <p class="text-gray-600">比官网更低的价格，灵活的计费方式，按量付费</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-20 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">常见问题</h2>
+        <div class="max-w-3xl mx-auto space-y-6">
+          <div class="bg-white rounded-lg p-6">
+            <h3 class="text-lg font-semibold mb-2">如何开始使用 RPGAPI？</h3>
+            <p class="text-gray-600">请添加 <a href="https://t.me/aiapi666" target="_blank" rel="noopener" class="text-purple-600 hover:text-purple-700">Telegram：@aiapi666</a> 获取免费测试额度，我们会提供专业的技术支持，帮助您快速接入。</p>
+          </div>
+          <div class="bg-white rounded-lg p-6">
+            <h3 class="text-lg font-semibold mb-2">API 如何优化角色扮演场景？</h3>
+            <p class="text-gray-600">我们针对角色扮演场景进行了特殊优化，包括角色人设保持、上下文连贯性、情感表达等方面，让 AI 角色的表现更加自然。</p>
+          </div>
+          <div class="bg-white rounded-lg p-6">
+            <h3 class="text-lg font-semibold mb-2">支持哪些付款方式？</h3>
+            <p class="text-gray-600">支持微信、支付宝、USDT 转账。本站需 100 美金起充，专注服务企业级客户，小额度需求请寻找其他服务商。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-white py-12">
+      <div class="container mx-auto px-4">
+        <div class="text-center text-gray-600">
+          <p>© 2024 RPGAPI. All rights reserved.</p>
+          <div class="mt-4 space-x-4">
+            <a href="#" class="text-gray-600 hover:text-purple-600">服务条款</a>
+            <a href="#" class="text-gray-600 hover:text-purple-600">隐私政策</a>
+            <a href="https://t.me/aiapi666" target="_blank" rel="noopener" class="inline-flex items-center text-gray-600 hover:text-purple-600">
+              Telegram: @aiapi666
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // 加载动画
+      window.addEventListener('load', function() {
+        var loadingOverlay = document.getElementById('loading-overlay');
+        loadingOverlay.style.opacity = '0';
+        loadingOverlay.style.transition = 'opacity 0.5s ease';
+        setTimeout(function() {
+          loadingOverlay.style.display = 'none';
+        }, 500);
+      });
+    </script>
+  </body>
+</html> 
