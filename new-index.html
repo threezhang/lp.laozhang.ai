@@ -9,7 +9,7 @@
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
       "name": "API易",
-      "description": "企业级专业稳定的 GPT-4o/o1/Claude3.5/Gemini/Grok API等全模型官方同源接口的中转分发。不限速，不过期，不惧封号，按量计费，长期可靠服务。",
+      "description": "企业级专业稳定的 OpenAI o1/Deepseek/Claude3.5/Gemini/Grok API等全模型官方同源接口的中转分发。不限速，不过期，不惧封号，按量计费，长期可靠服务。",
       "applicationCategory": "DeveloperApplication",
       "operatingSystem": "Any",
       "offers": {
@@ -151,7 +151,7 @@
             </li>
             <li class="nav-item">
               <a href="https://www.apiyi.com/token" class="nav-link" target="_blank" rel="noopener">
-                <img src="images/icons/token.svg" alt="令牌 API Key" class="nav-icon"> 令牌
+                <img src="images/icons/token.svg" alt="令牌 API Key" class="nav-icon"> KEY
               </a>
             </li>
             <li class="nav-item">
@@ -188,7 +188,7 @@
         </div>
         <div class="navbar-auth">
           <a href="https://www.apiyi.com/account/profile" class="nav-link" target="_blank" rel="noopener">
-            <img src="images/icons/user.svg" alt="个人中心" class="nav-icon"> <span class="desktop-only">个人中心</span>
+            <img src="images/icons/user.svg" alt="个人中心" class="nav-icon"> <span class="desktop-only">登录 | 注册</span>
           </a>
         </div>
       </div>
@@ -197,10 +197,10 @@
     <header class="bg-white text-gray-800 py-16">
       <div class="container mx-auto px-4">
         <h2 class="text-4xl font-bold mb-6 text-center api-title">
-          API易，只与最好的 AI大模型 有关
+          API易，聚合优秀的AI大模型
         </h2>
         <p class="text-xl mb-12 text-center max-w-3xl mx-auto">
-          企业级专业稳定的 <b>GPT-4o/o1/Claude3.5/Gemini</b>
+          企业级专业稳定的 <b>OpenAI o1/Deepseek/Gemini</b>
           等全模型<b>官方同源接口</b>的中转分发。不限速，不过期，不惧封号，按量计费，长期可靠服务；让技术助力科研、公益事业！
         </p>
 
@@ -242,7 +242,7 @@
           >
           <br />
           <p class="mt-4 mb-8 text-sm">
-            (赠送约 10 万 gpt-4o Tokens 确保能跑通*)
+            (赠送约300万Tokens，各种模型都能用，*数值等值于 deepseek-v3)
           </p>
         </div>
       </div>
@@ -253,7 +253,7 @@
       <div class="container mx-auto px-4">
         <div class="flex justify-center items-center">
           <img 
-            src="images/ai-logos.png" 
+            src="images/ai-logos-202501.png" 
             alt="AI 合作伙伴标志" 
             class="w-full max-w-5xl mx-auto"
             loading="lazy"
@@ -267,7 +267,7 @@
       <div class="container mx-auto px-4">
         <h2 class="text-3xl font-bold mb-4 text-center">两种典型使用场景</h2>
         <p class="text-xl text-gray-600 text-center mb-12 max-w-3xl mx-auto">
-          3 分钟可以跑通的 OpenAI、Claude API 调用，天下武功，唯快不破。
+          3 分钟可以跑通的 OpenAI、Deepseek API 调用，天下武功，唯快不破。
           <br>本站可能是对 API 新手最友好的网站：API易。
         </p>
         
@@ -405,9 +405,8 @@ completion = client.chat.completions.create(
             <h3 class="text-2xl font-semibold mb-4">🖥️ 1、注册「API易」账号</h3>
             <p>
               <strong><a href="https://www.apiyi.com/register/?aff_code=0Y5h" target="_blank" rel="noopener" class="text-blue-600 hover:underline">免费注册</a></strong>：将自动赠送 0.1 美金余额，测试阶段跑通绝对没问题~ 加站长微信(8765058)，加赠一金余额。
-              <p><strong>教育优惠</strong>：高校师生可凭学校邮箱注册，并获赠 5 美金额度（约 50 万 gpt-4o Tokens，能处理约 20 万汉字）。
+              <p><strong>教育优惠</strong>：高校师生可凭学校邮箱注册，并获赠 5 美金额度（约 1500万 gpt-4o-mini Tokens，能处理约 500 万汉字）。
               </p>
-            </p>
           </div>
           <div class="card p-8 tech-border">
             <h3 class="text-2xl font-semibold mb-4">🔑 2、获得 API Key</h3>
@@ -668,9 +667,9 @@ completion = client.chat.completions.create(
                   </li>
                   <li>
                     🌐
-                    <strong>聚合：</strong>汇聚多个大模型，统一对接格式，如 Claude
+                    <strong>聚合</strong>汇聚多个大模型，统一对接格式，如 Claude
                     使用 OpenAI
-                    的格式，只需要换模型名称即可。并将逐步接入更多模型。
+                    的格式，只需要换模型名称即可。并将逐步接入更多模。
                   </li>
                 </ul>
               </div>
@@ -799,7 +798,7 @@ completion = client.chat.completions.create(
         >立即免费注册API</a
       >
       <p class="mt-4 text-sm">
-        (每个用户均自动赠送1万的gpt-4o Tokens，确保能跑通)
+        (每个用户均可赠送300万的deepseek-chat Tokens，确保用起来)
       </p>
     </div>
     <footer class="footer">
@@ -817,6 +816,7 @@ completion = client.chat.completions.create(
           友情链接：
           <a href="https://platform.openai.com/docs/api-reference/introduction" target="_blank" rel="noopener noreferrer">OpenAI开发文档</a> |
           <a href="https://docs.anthropic.com/zh-CN/docs/welcome" target="_blank" rel="noopener noreferrer">Claude开发文档</a> |
+          <a href="https://help.apiyi.com" target="_blank" rel="noopener noreferrer">API易 博客</a> |
           <a href="https://researchtitle.textgen.net/?utm_source=apiyi" target="_blank" rel="noopener noreferrer">AI论文标题生成器</a>
         </p>
       </div>
