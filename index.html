@@ -51,6 +51,13 @@
       align-items: center;
       width: 100%;
       padding: 0 20px;
+      flex-wrap: nowrap;
+    }
+
+    .navbar-left {
+      flex: 1;
+      min-width: 0;
+      overflow: hidden;
     }
     
     .navbar-brand {
@@ -135,11 +142,11 @@
       <div class="promo-content">
         <span class="promo-icon">🔥</span>
         <span class="promo-text">
-          <strong>nano banana pro API</strong> 官方2折！
-          <span class="promo-price">$0.05/次</span>
-          <span class="promo-features">· 高并发 · 稳定可靠</span>
+          <span data-i18n="promo.text"><strong>nano banana pro API</strong> 官方2折！</span>
+          <span class="promo-price" data-i18n="promo.price">$0.05/次</span>
+          <span class="promo-features" data-i18n="promo.features">· 高并发 · 稳定可靠</span>
         </span>
-        <a href="https://yingtu.ai" target="_blank" rel="noopener" class="promo-cta">
+        <a href="https://yingtu.ai" target="_blank" rel="noopener" class="promo-cta" data-i18n="promo.cta">
           立即体验 →
         </a>
       </div>
@@ -156,22 +163,22 @@
         <div class="navbar-left">
           <div class="navbar-brand">
             <img src="images/favicon-64x64.png" alt="老张API Logo" width="24" height="24" class="logo-img">
-            <span>老张API</span>
+            <span data-i18n="nav.brand">老张API</span>
           </div>
           <ul class="navbar-nav desktop-nav">
             <li class="nav-item">
               <a href="https://api.laozhang.ai/" class="nav-link">
-                <img src="images/icons/home.svg" alt="首页" class="nav-icon"> 首页
+                <img src="images/icons/home.svg" alt="首页" class="nav-icon"> <span data-i18n="nav.home">首页</span>
               </a>
             </li>
             <li class="nav-item">
               <a href="https://api.laozhang.ai/token" class="nav-link" target="_blank" rel="noopener">
-                <img src="images/icons/token.svg" alt="令牌 API Key" class="nav-icon"> KEY
+                <img src="images/icons/token.svg" alt="令牌 API Key" class="nav-icon"> <span data-i18n="nav.key">KEY</span>
               </a>
             </li>
             <li class="nav-item">
               <a href="https://api.laozhang.ai/log" class="nav-link" target="_blank" rel="noopener">
-                <img src="images/icons/log.svg" alt="日志" class="nav-icon"> 日志
+                <img src="images/icons/log.svg" alt="日志" class="nav-icon"> <span data-i18n="nav.log">日志</span>
               </a>
             </li>
             <!--<li class="nav-item">-->
@@ -181,7 +188,7 @@
             <!--</li>-->
             <li class="nav-item">
               <a href="https://api.laozhang.ai/status" class="nav-link" target="_blank" rel="noopener">
-                <img src="images/icons/status.svg" alt="状态" class="nav-icon"> 状态
+                <img src="images/icons/status.svg" alt="状态" class="nav-icon"> <span data-i18n="nav.status">状态</span>
               </a>
             </li>
             <!--<li class="nav-item">-->
@@ -191,17 +198,17 @@
             <!--</li>-->
             <li class="nav-item">
               <a href="#pricing" class="nav-link">
-                <img src="images/icons/pricing.svg" alt="价格" class="nav-icon"> 价格
+                <img src="images/icons/pricing.svg" alt="价格" class="nav-icon"> <span data-i18n="nav.pricing">价格</span>
               </a>
             </li>
             <li class="nav-item">
               <a href="https://yingtu.ai/" class="nav-link" target="_blank">
-                🎨 免费AI生图
+                <span data-i18n="nav.aiImage">🎨 免费AI生图</span>
               </a>
             </li>
             <li class="nav-item">
               <a href="https://docs.laozhang.ai/" class="nav-link"  target="_blank">
-                <img src="images/icons/qa.svg" alt="开发文档" class="nav-icon"> 开发文档
+                <img src="images/icons/qa.svg" alt="开发文档" class="nav-icon"> <span data-i18n="nav.docs">开发文档</span>
               </a>
             </li>
             
@@ -209,18 +216,25 @@
         </div>
         <div class="navbar-auth">
           <a href="https://api.laozhang.ai/account/profile" class="nav-link" target="_blank" rel="noopener">
-            <img src="images/icons/user.svg" alt="个人中心" class="nav-icon"> <span class="desktop-only">登录 | 注册</span>
+            <img src="images/icons/user.svg" alt="个人中心" class="nav-icon"> <span class="desktop-only" data-i18n="nav.login">登录 | 注册</span>
           </a>
+          <button id="lang-switcher" class="lang-btn" onclick="i18n.toggleLanguage()">
+            <svg class="globe-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            </svg>
+            <span class="lang-text">EN</span>
+          </button>
         </div>
       </div>
     </nav>
 
     <header class="bg-white text-gray-800 py-16">
       <div class="container mx-auto px-4">
-        <h2 class="text-4xl font-bold mb-6 text-center api-title">
+        <h2 class="text-4xl font-bold mb-6 text-center api-title" data-i18n="hero.title">
           老张API，聚合优秀的AI大模型
         </h2>
-        <p class="text-xl mb-12 text-center max-w-3xl mx-auto">
+        <p class="text-xl mb-12 text-center max-w-3xl mx-auto" data-i18n="hero.description">
           企业级专业稳定的 <b>OpenAI/Gemini/Claude 全系最新模型</b>
           <b>官方同源接口</b>的中转分发。不限速，不过期，不惧封号，按量计费，长期可靠服务；
         </p>
@@ -229,25 +243,25 @@
           class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto mb-12"
         >
           <div class="card card-gradient-1 p-6">
-            <h3 class="text-xl font-semibold mb-4 text-gray-800">
+            <h3 class="text-xl font-semibold mb-4 text-gray-800" data-i18n="hero.card1Title">
               优势 1：接入简易、快速上手
             </h3>
-            <p class="text-gray-700">
+            <p class="text-gray-700" data-i18n="hero.card1Desc">
               真开箱即用，注册即赠送0.05美金额度，免费获得API
               Key。立马跑通！全部模型可用
             </p>
           </div>
           <div class="card card-gradient-2 p-6">
-            <h3 class="text-xl font-semibold mb-4 text-gray-800">
+            <h3 class="text-xl font-semibold mb-4 text-gray-800" data-i18n="hero.card2Title">
               优势 2：性价比高、消费透明
             </h3>
-            <p class="text-gray-700">官网充值太麻烦！本站约官网 8 折，量大从优，可开发票；每次请求都有日志</p>
+            <p class="text-gray-700" data-i18n="hero.card2Desc">官网充值太麻烦！本站约官网 8 折，量大从优，可开发票；每次请求都有日志</p>
           </div>
           <div class="card card-gradient-3 p-6">
-            <h3 class="text-xl font-semibold mb-4 text-gray-800">
+            <h3 class="text-xl font-semibold mb-4 text-gray-800" data-i18n="hero.card3Title">
               优势 3：官网同源，稳定可靠
             </h3>
-            <p class="text-gray-700">
+            <p class="text-gray-700" data-i18n="hero.card3Desc">
               源自官网直接转发，加密传输，规避平台封号，专业技术确保你可安全、稳定使用
             </p>
           </div>
@@ -259,10 +273,10 @@
             target="_blank"
             rel="noopener noreferrer"
             class="primary-button"
-            >立即免费注册</a
+            data-i18n="hero.cta">立即免费注册</a
           >
           <br />
-          <p class="mt-4 mb-8 text-sm">
+          <p class="mt-4 mb-8 text-sm" data-i18n="hero.ctaNote">
             (赠送$0.05美金，各种模型都能用)
           </p>
         </div>
@@ -286,8 +300,8 @@
     <!-- 在 header 和 快速开始section 之间添加新区块 -->
     <section class="usage-section py-16">
       <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold mb-4 text-center">两种典型使用场景</h2>
-        <p class="text-xl text-gray-600 text-center mb-12 max-w-3xl mx-auto">
+        <h2 class="text-3xl font-bold mb-4 text-center" data-i18n="usage.title">两种典型使用场景</h2>
+        <p class="text-xl text-gray-600 text-center mb-12 max-w-3xl mx-auto" data-i18n="usage.subtitle">
           3 分钟可以跑通的 OpenAI、Claude 、Gemini 调用，天下武功，唯快不破。
           <br>本站可能是对 API 新手最友好的网站：老张API。
         </p>
@@ -295,7 +309,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           <!-- 代码调用卡片 -->
           <div class="card usage-card p-6">
-            <h3 class="text-xl font-semibold mb-4">
+            <h3 class="text-xl font-semibold mb-4" data-i18n="usage.codeTitle">
               <span class="inline-block mr-2">💻</span>代码调用（能改代码，一定能用）
             </h3>
 
@@ -319,7 +333,7 @@
                   <svg class="copy-icon" viewBox="0 0 24 24" width="14" height="14">
                     <path fill="currentColor" d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
                   </svg>
-                  <span>复制</span>
+                  <span data-i18n="usage.copy">复制</span>
                 </button>
               </div>
               <!-- Curl 代码 -->
@@ -364,14 +378,14 @@ completion = client.chat.completions.create(
 
             <div class="text-sm text-gray-600 mt-4">
               <p class="mb-2">
-                👉 获取 API Key？
-                <a href="https://api.laozhang.ai/token" class="text-blue-600 hover:underline" target="_blank" rel="noopener">
+                <span data-i18n="usage.getKey">👉 获取 API Key？</span>
+                <a href="https://api.laozhang.ai/token" class="text-blue-600 hover:underline" target="_blank" rel="noopener" data-i18n="usage.viewToken">
                   点击查看令牌
                 </a>
               </p>
               <p>
-                📝 更多示例代码、最佳实践，
-                <a href="https://docs.laozhang.ai" class="text-blue-600 hover:underline" target="_blank" rel="noopener">
+                <span data-i18n="usage.moreCode">📝 更多示例代码、最佳实践，</span>
+                <a href="https://docs.laozhang.ai" class="text-blue-600 hover:underline" target="_blank" rel="noopener" data-i18n="usage.viewDocs">
                   查看文档 >>
                 </a>
               </p>
@@ -380,35 +394,35 @@ completion = client.chat.completions.create(
 
           <!-- 第三方工具使用卡片 -->
           <div class="card usage-card p-6">
-            <h3 class="text-xl font-semibold mb-4">
+            <h3 class="text-xl font-semibold mb-4" data-i18n="usage.toolTitle">
               <span class="inline-block mr-2">🔧</span>第三方工具使用
             </h3>
             <div class="steps-block">
               <div class="step-item mb-4">
-                <h4 class="font-medium mb-2">1. 配置本站的 Key</h4>
+                <h4 class="font-medium mb-2" data-i18n="usage.step1Title">1. 配置本站的 Key</h4>
                 <p class="text-gray-600">
-                  在第三方工具的设置中填入从
-                  <a href="https://api.laozhang.ai/token" class="text-blue-600 hover:underline" target="_blank" rel="noopener">
+                  <span data-i18n="usage.step1Desc">在第三方工具的设置中填入从</span>
+                  <a href="https://api.laozhang.ai/token" class="text-blue-600 hover:underline" target="_blank" rel="noopener" data-i18n="usage.step1Link">
                     老张API获取的密钥
                   </a>
                 </p>
               </div>
               <div class="step-item">
-                <h4 class="font-medium mb-2">2. 修改代理地址</h4>
+                <h4 class="font-medium mb-2" data-i18n="usage.step2Title">2. 修改代理地址</h4>
                 <p class="text-gray-600">
-                  将API地址修改为：
+                  <span data-i18n="usage.step2Desc">将API地址修改为：</span>
                   <code class="bg-gray-100 px-2 py-1 rounded">https://api.laozhang.ai/v1</code>
                 </p>
               </div>
             </div>
-            
+
             <div class="text-sm text-gray-600 mt-4">
-              <p class="mb-2">
+              <p class="mb-2" data-i18n="usage.toolHelp">
                 👨‍💻 99%用户已跑通，遇到卡点截图发给 Telegram：@laozhang_cn
               </p>
               <p>
-                📚 更多教程 >>
-                <a href="https://blog.laozhang.ai" class="text-blue-600 hover:underline" target="_blank" rel="noopener">
+                <span data-i18n="usage.moreHelp">📚 更多教程 >></span>
+                <a href="https://blog.laozhang.ai" class="text-blue-600 hover:underline" target="_blank" rel="noopener" data-i18n="usage.helpCenter">
                   老张API 帮助中心
                 </a>
               </p>
@@ -420,25 +434,25 @@ completion = client.chat.completions.create(
 
     <main class="bg-light">
       <section class="mb-16 title-h2">
-        <h2 class="text-3xl font-bold mb-12 text-center">快速开始，只需三步 ↓</h2>
+        <h2 class="text-3xl font-bold mb-12 text-center" data-i18n="quickstart.title">快速开始，只需三步 ↓</h2>
         <div class="space-y-12 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="card p-8 tech-border">
-            <h3 class="text-2xl font-semibold mb-4">🖥️ 1、注册「老张API」账号</h3>
-            <p>
+            <h3 class="text-2xl font-semibold mb-4" data-i18n="quickstart.step1Title">🖥️ 1、注册「老张API」账号</h3>
+            <p data-i18n="quickstart.step1Desc">
               <strong><a href="https://api.laozhang.ai/register/?aff_code=0Y5h" target="_blank" rel="noopener" class="text-blue-600 hover:underline">免费注册</a></strong>：将自动赠送 0.05 美金余额，测试阶段跑通绝对没问题~
-              
+            </p>
           </div>
           <div class="card p-8 tech-border">
-            <h3 class="text-2xl font-semibold mb-4">🔑 2、获得 API Key</h3>
-            <p>
+            <h3 class="text-2xl font-semibold mb-4" data-i18n="quickstart.step2Title">🔑 2、获得 API Key</h3>
+            <p data-i18n="quickstart.step2Desc">
               后台的<a href="https://api.laozhang.ai/token" target="_blank" rel="noopener" class="text-blue-600 hover:underline"> 令牌 </a>栏目，可直接复制「默认令牌」使用，或生成新的令牌即 Key，Key 的格式是：<code class="code-highlight">sk-xxxx......</code>
             </p>
             </div>
           <div class="card p-8 tech-border">
-            <h3 class="text-2xl font-semibold mb-4">
+            <h3 class="text-2xl font-semibold mb-4" data-i18n="quickstart.step3Title">
               🔄 3、修改代码的请求地址
             </h3>
-            <p class="mb-4">
+            <p class="mb-4" data-i18n="quickstart.step3Method">
               <strong>调用方式</strong>：只需要将请求地址和 Key
               修改其他与 OpenAI 官方完全一致，简单来说：将
               <code class="code-highlight">https://api.openai.com</code>
@@ -446,7 +460,7 @@ completion = client.chat.completions.create(
               <code class="code-highlight">https://api.laozhang.ai</code
               >；并使用在『老张API』网站后台的默认令牌，其他代码层面无需做任何改动。
             </p>
-            <p class="mb-4">
+            <p class="mb-4" data-i18n="quickstart.step3Model">
               <strong>模型方面</strong>：本站支持主要 OpenAI 和 Claude 可用模型，注册即可试用。<a href="https://api.laozhang.ai/account/profile" target="_blank" rel="noopener" class="text-blue-600 hover:underline"> 账户后台 > 一键复制模型名称 </a>
             </p>
             <div class="flex flex-wrap gap-4 mb-4">
@@ -455,7 +469,7 @@ completion = client.chat.completions.create(
               target="_blank"
               rel="noopener noreferrer"
               class="secondary-button"
-              >代码示例(快速上手)</a
+              data-i18n="quickstart.codeExample">代码示例(快速上手)</a
               >
 <!--               <a
                 href="https://apiyi.apifox.cn"
@@ -465,7 +479,7 @@ completion = client.chat.completions.create(
                 >在线调试(ApiFox)</a
               > -->
             </div>
-            <p class="text-sm text-gray-600 mb-2">
+            <p class="text-sm text-gray-600 mb-2" data-i18n="quickstart.step3Note">
               注意：某些程序需要添加
               <code class="code-highlight">v1</code> 示例，具体有 3
               种情况，请测试
@@ -485,20 +499,20 @@ completion = client.chat.completions.create(
             </ul>
           </div>
           <div class="card p-8 tech-border">
-            <h3 class="text-2xl font-semibold mb-4">
+            <h3 class="text-2xl font-semibold mb-4" data-i18n="quickstart.step4Title">
               📊 4、查看日志，一目了然消耗
             </h3>
-            <p>
+            <p data-i18n="quickstart.step4Desc">
               通过前三步，快速跑通。而后台的<a href="https://api.laozhang.ai/log" target="_blank" rel="noopener" class="text-blue-600 hover:underline"> 日志 </a>栏目，可以查看每次调用的详细日志。每一次请求的消耗清清楚楚。
             </p>
-            <p class="mt-2">
+            <p class="mt-2" data-i18n="quickstart.step4Note">
               新户注册赠送的额度用完后，可以随时在线充值，余额即刻到账，可继续调用 API。
             </p>
           </div>
           <div class="card p-8 tech-border">
-            <h3 class="text-2xl font-semibold mb-4">💰 5、费率与充值</h3>
+            <h3 class="text-2xl font-semibold mb-4" data-i18n="quickstart.step5Title">💰 5、费率与充值</h3>
             <ol class="list-decimal list-inside space-y-4">
-              <li>
+              <li data-i18n="quickstart.step5Item1">
                 <strong>性价比高：</strong>
                 若发现账户余额不足，API
                 调用时会有提示，此时欢迎充值购买。本站充值是低于美金汇率的
@@ -507,17 +521,17 @@ completion = client.chat.completions.create(
                 API 资源；支持开发票。
               </li>
               <li>
-                <strong>费率一致：</strong>
-                在模型的调用费率上保持和官网的一致，绝无玩套路。模型价格请看
+                <span data-i18n="quickstart.step5Item2"><strong>费率一致：</strong>
+                在模型的调用费率上保持和官网的一致，绝无玩套路。模型价格请看</span>
                 <a
                   href="https://api.laozhang.ai/account/pricing"
                   target="_blank"
                   rel="noopener noreferrer"
                   class="text-blue-600 hover:underline"
-                  >点击查看模型价格</a
+                  data-i18n="quickstart.viewPricing">点击查看模型价格</a
                 >；
               </li>
-              <li>
+              <li data-i18n="quickstart.step5Item3">
                 <strong>联系我们：</strong>
                 Telegram：@laozhang_cn，欢迎交流反馈。
               </li>
@@ -528,69 +542,69 @@ completion = client.chat.completions.create(
                     target="_blank"
                     rel="noopener noreferrer"
                     class="secondary-button"
-                    >邀请好友返利：复制链接 ></a
+                    data-i18n="quickstart.referral">邀请好友返利：复制链接 ></a
                   >
                 </div>
               </li>
             </ol>
           </div>
           <div class="card p-8 tech-border">
-            <h3 class="text-2xl font-semibold mb-4">🔍 6、附：API 支持的场景</h3>
+            <h3 class="text-2xl font-semibold mb-4" data-i18n="quickstart.step6Title">🔍 6、附：API 支持的场景</h3>
             <ul class="list-disc list-inside space-y-2">
-              <li>官方代码示例本站供的代码示例，任何支持填写 API 代理地址的第三方封装程序；</li>
-              <li>
+              <li data-i18n="quickstart.step6Item1">官方代码示例本站供的代码示例，任何支持填写 API 代理地址的第三方封装程序；</li>
+              <li data-i18n="quickstart.step6Item2">
                 GitHub上大多数开源OpenAI第三方"对话聊天"程序（如ChatGPT Next
                 Web、Lobe Chat等）；
               </li>
-              <li>自定义开发项目（如数据集对比实验、LangChain等）；</li>
-              <li>浏览器插件（如OpenAI Translator、Glarity、沉浸式翻译）；</li>
+              <li data-i18n="quickstart.step6Item3">自定义开发项目（如数据集对比实验、LangChain等）；</li>
+              <li data-i18n="quickstart.step6Item4">浏览器插件（如OpenAI Translator、Glarity、沉浸式翻译）；</li>
             </ul>
           </div>
         </div>
       </section>
 
       <section class="text-center mb-16 title-little section-docs">
-        <h2 class="text-3xl font-bold mb-8">开发文档</h2>
+        <h2 class="text-3xl font-bold mb-8" data-i18n="docs.title">开发文档</h2>
         <div class="flex flex-wrap justify-center gap-4">
           <a
             href="https://docs.laozhang.ai/"
             target="_blank"
             rel="noopener noreferrer"
             class="primary-button"
-            >老张API 帮助中心</a
+            data-i18n="docs.helpCenter">老张API 帮助中心</a
           >
           <a
             href="https://docs.laozhang.ai/"
             target="_blank"
             rel="noopener noreferrer"
             class="primary-button"
-            >免注册试用？！</a
+            data-i18n="docs.freeTry">免注册试用？！</a
           >
         </div>
       </section>
 
     <!-- 在 FAQ 区块前，快速开始区块后添加[价格说明]板块 -->
     <section id="pricing" class="pricing-section mb-16">
-      <h2 class="text-3xl font-bold mb-8 text-center">价格说明</h2>
+      <h2 class="text-3xl font-bold mb-8 text-center" data-i18n="pricing.title">价格说明</h2>
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <!-- 价格特点卡片 -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           <!-- 充值说明卡片 -->
           <div class="card pricing-card p-6 text-center">
             <div class="pricing-icon mb-4">💰</div>
-            <h3 class="text-xl font-semibold mb-3">充值说明（可开票）</h3>
+            <h3 class="text-xl font-semibold mb-3" data-i18n="pricing.rechargeTitle">充值说明（可开票）</h3>
             <div class="price-details">
               <div class="detail-item">
-                <span class="text-sm">最低充值</span>
-                <span class="text-green-500">5 美金 = 35 元</span>
+                <span class="text-sm" data-i18n="pricing.minRecharge">最低充值</span>
+                <span class="text-green-500" data-i18n="pricing.minRechargeValue">5 美金 = 35 元</span>
               </div>
               <div class="detail-item">
-                <span class="text-sm">充值比例</span>
-                <span class="text-green-500">1:7 汇率</span>
+                <span class="text-sm" data-i18n="pricing.ratio">充值比例</span>
+                <span class="text-green-500" data-i18n="pricing.ratioValue">1:7 汇率</span>
               </div>
               <div class="detail-item">
-                <span class="text-sm">支付方式</span>
-                <span class="text-green-500">支付宝在线充值</span>
+                <span class="text-sm" data-i18n="pricing.payment">支付方式</span>
+                <span class="text-green-500" data-i18n="pricing.paymentValue">支付宝在线充值</span>
               </div>
             </div>
           </div>
@@ -598,19 +612,19 @@ completion = client.chat.completions.create(
           <!-- 修改定价原则卡片部分 -->
           <div class="card pricing-card p-6 text-center">
             <div class="pricing-icon mb-4">📊</div>
-            <h3 class="text-xl font-semibold mb-3">定价原则</h3>
+            <h3 class="text-xl font-semibold mb-3" data-i18n="pricing.principleTitle">定价原则</h3>
             <div class="pricing-principles">
               <div class="principle-item">
-                <span class="principle-label">原则一：</span>
-                <span class="principle-content">模型齐全 上新相对快</span>
+                <span class="principle-label" data-i18n="pricing.principle1Label">原则一：</span>
+                <span class="principle-content" data-i18n="pricing.principle1">模型齐全 上新相对快</span>
               </div>
               <div class="principle-item">
-                <span class="principle-label">原则二：</span>
-                <span class="principle-content">消耗机制 与官方一致</span>
+                <span class="principle-label" data-i18n="pricing.principle2Label">原则二：</span>
+                <span class="principle-content" data-i18n="pricing.principle2">消耗机制 与官方一致</span>
               </div>
               <div class="principle-item">
-                <span class="principle-label">原则三：</span>
-                <span class="principle-content">按量计费 用多少买多少</span>
+                <span class="principle-label" data-i18n="pricing.principle3Label">原则三：</span>
+                <span class="principle-content" data-i18n="pricing.principle3">按量计费 用多少买多少</span>
               </div>
             </div>
           </div>
@@ -618,19 +632,19 @@ completion = client.chat.completions.create(
           <!-- 新用户福利卡片 -->
           <div class="card pricing-card p-6 text-center">
             <div class="pricing-icon mb-4">🎁</div>
-            <h3 class="text-xl font-semibold mb-3">新用户福利</h3>
+            <h3 class="text-xl font-semibold mb-3" data-i18n="pricing.benefitTitle">新用户福利</h3>
             <div class="benefits">
               <div class="benefit-item">
-                <span>注册即送</span>
-                <span class="text-blue-500">0.05 美金</span>
+                <span data-i18n="pricing.benefit1Label">注册即送</span>
+                <span class="text-blue-500" data-i18n="pricing.benefit1Value">0.05 美金</span>
               </div>
               <div class="benefit-item">
-                <span>免费测试</span>
-                <span class="text-blue-500">全部模型可用</span>
+                <span data-i18n="pricing.benefit2Label">免费测试</span>
+                <span class="text-blue-500" data-i18n="pricing.benefit2Value">全部模型可用</span>
               </div>
               <div class="benefit-item">
-                <span>余额永久有效</span>
-                <span class="text-blue-500">不过期</span>
+                <span data-i18n="pricing.benefit3Label">余额永久有效</span>
+                <span class="text-blue-500" data-i18n="pricing.benefit3Value">不过期</span>
               </div>
             </div>
           </div>
@@ -639,7 +653,7 @@ completion = client.chat.completions.create(
         <!-- 补充说明 -->
         <div class="text-center mb-8">
           <a href="https://api.laozhang.ai/account/pricing" target="_blank" rel="noopener" class="inline-flex items-center text-blue-600 hover:underline">
-            <span>查看不同模型的完整价格表</span>
+            <span data-i18n="pricing.viewFullPricing">查看不同模型的完整价格表</span>
             <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
             </svg>
@@ -650,15 +664,15 @@ completion = client.chat.completions.create(
 
 
       <section id="faq" class="mb-16">
-        <h2 class="text-3xl font-bold mb-12 text-center title-little">老张API - 常见问题</h2>
+        <h2 class="text-3xl font-bold mb-12 text-center title-little" data-i18n="faq.title">老张API - 常见问题</h2>
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="bg-white rounded-lg shadow-md">
             <div class="faq-item">
               <div class="faq-question">
-                1）老张API 有什么产品优势？
+                <span data-i18n="faq.q1">1）老张API 有什么产品优势？</span>
                 <span class="toggle-icon">+</span>
               </div>
-              <div class="faq-answer active">
+              <div class="faq-answer active" data-i18n="faq.a1">
                 <ul class="list-none space-y-2">
                   <li>
                     🛡️
@@ -695,38 +709,38 @@ completion = client.chat.completions.create(
             </div>
             <div class="faq-item">
               <div class="faq-question">
-                2）老张API 支持哪些OpenAI模型？Claude 也支持吗？
+                <span data-i18n="faq.q2">2）老张API 支持哪些OpenAI模型？Claude 也支持吗？</span>
                 <span class="toggle-icon">+</span>
               </div>
-              <div class="faq-answer">
+              <div class="faq-answer" data-i18n="faq.a2">
                 老张API支持所有主流 AI 模型，包括 OpenAI 最新的 GPT-5、GPT-5 mini、o3、o4-mini 等，也支持 Claude Opus 4.5、Sonnet 4.5、Haiku 4.5，以及 Google Gemini 3 Pro/Flash、Grok、Deepseek 等。具体可用模型列表可在您的账户后台查看。
               </div>
             </div>
             <div class="faq-item">
               <div class="faq-question">
-                3）如何充值 老张API 账户？
+                <span data-i18n="faq.q3">3）如何充值 老张API 账户？</span>
                 <span class="toggle-icon">+</span>
               </div>
-              <div class="faq-answer">
+              <div class="faq-answer" data-i18n="faq.a3">
                 登录您的老张API账户后，在"充值"页选择充值金额，支持支付宝付款。最低充值金额为5美元，充值比例为1:7（即5美元=35元人民币）。充值到账后即可用于调用。支持对公转账和开票（下单后联系 Telegram @laozhang_cn，提供付款记录和抬头）
               </div>
             </div>
             <div class="faq-item">
               <div class="faq-question">
-                4）OpenAI API 是怎么计费的？跟什么有关？
+                <span data-i18n="faq.q4">4）OpenAI API 是怎么计费的？跟什么有关？</span>
                 <span class="toggle-icon">+</span>
               </div>
-              <div class="faq-answer">
+              <div class="faq-answer" data-i18n="faq.a4">
                 按量计费，计费单位是
                 Tokens使用的模型输入和输出的长度有关。您自行测试一下，每次请求都有明细日志可以查询，每笔消耗清清楚楚。这样可以估算自己的项目需要多少的消耗。
               </div>
             </div>
             <div class="faq-item">
               <div class="faq-question">
-                5）老张API 的费率如何计算？额度是什么？
+                <span data-i18n="faq.q5">5）老张API 的费率如何计算？额度是什么？</span>
                 <span class="toggle-icon">+</span>
               </div>
-              <div class="faq-answer">
+              <div class="faq-answer" data-i18n="faq.a5">
                 老张API的费率与OpenAI官方保持一致，没有额外加价。具体每个模型的率可以在您的账户后台或我们的定价页面查看。额度
                 = 分组倍率1 * 模型倍率1 * （提示 token 数 + 补全 token 数 *
                 补全倍率）。一句话介绍：【老张API的费率计算和官方一致】。
@@ -734,19 +748,19 @@ completion = client.chat.completions.create(
             </div>
             <div class="faq-item">
               <div class="faq-question">
-                6）如何查看 API 使用记录和消费详细？
+                <span data-i18n="faq.q6">6）如何查看 API 使用记录和消费详细？</span>
                 <span class="toggle-icon">+</span>
               </div>
-              <div class="faq-answer">
+              <div class="faq-answer" data-i18n="faq.a6">
                 在您的API账户后台，"日志"页面可以查看每次API调用的详细记录，包括使用的模型、消耗的token数量和对应的费用。
               </div>
             </div>
             <div class="faq-item">
               <div class="faq-question">
-                7）站长您推荐我作为初学者，使用什么模型？
+                <span data-i18n="faq.q7">7）站长您推荐我作为初学者，使用什么模型？</span>
                 <span class="toggle-icon">+</span>
               </div>
-              <div class="faq-answer">
+              <div class="faq-answer" data-i18n="faq.a7">
                 OpenAI 方面，GPT-5 是当前最强大的旗舰模型，GPT-5 mini 则是性价比之选，速度快价格低。
                 推理任务推荐 o3 或 o4-mini 模型。
                 Claude 方面，Opus 4.5 适合复杂任务和代码生成，Sonnet 4.5 和 Haiku 4.5 则是速度和成本的平衡选择。
@@ -755,10 +769,10 @@ completion = client.chat.completions.create(
             </div>
             <div class="faq-item">
               <div class="faq-question">
-                8）我是 ChatGPT Plus 用户，能否用官网直连 API？
+                <span data-i18n="faq.q8">8）我是 ChatGPT Plus 用户，能否用官网直连 API？</span>
                 <span class="toggle-icon">+</span>
               </div>
-              <div class="faq-answer">
+              <div class="faq-answer" data-i18n="faq.a8">
                 科普下：Plus 和 API 是两个体系，完全独立分开的。 在OpenAI
                 官网开发后台 API Key 地方，验证了海外手机号码也用不了
                 API，还是需要值额度的（需要海外信用卡，很麻烦）。本站也另外提供直连 API
@@ -767,10 +781,10 @@ completion = client.chat.completions.create(
             </div>
             <div class="faq-item">
               <div class="faq-question">
-                9）老张API 如何处理内容安全合规性？
+                <span data-i18n="faq.q9">9）老张API 如何处理内容安全合规性？</span>
                 <span class="toggle-icon">+</span>
               </div>
-              <div class="faq-answer">
+              <div class="faq-answer" data-i18n="faq.a9">
                 <p>老张API采取以下措施处理内容安全和合规性：</p>
                 <ul class="list-disc pl-5 mt-2">
                   <li><strong>内容审核：</strong> 已接入专业官方的内容审核 API，识别并拦截潜在违规内容而不返回。</li>
@@ -782,10 +796,10 @@ completion = client.chat.completions.create(
             </div>
             <div class="faq-item">
               <div class="faq-question">
-                10）老张API 如何保障数据安全？
+                <span data-i18n="faq.q10">10）老张API 如何保障数据安全？</span>
                 <span class="toggle-icon">+</span>
               </div>
-              <div class="faq-answer">
+              <div class="faq-answer" data-i18n="faq.a10">
                 老张API高度重视用户数据安全，采取了多重措施保护您的信息：
                 <ul class="list-disc pl-5 mt-2">
                   <li><strong>端到端加密</strong>所有数据传输均采用TLS 1.3协议加密，确保数据在传过程中的安全。</li>
@@ -810,33 +824,34 @@ completion = client.chat.completions.create(
         target="_blank"
         rel="noopener noreferrer"
         class="primary-button"
-        >立即免费注册API</a
+        data-i18n="cta.register">立即免费注册API</a
       >
-      <p class="mt-4 text-sm">
+      <p class="mt-4 text-sm" data-i18n="cta.note">
         (每个用户均可赠送$0.05美金测试额度，确保用起来)
       </p>
     </div>
     <footer class="footer">
       <div class="footer-container text-center">
         <p class="footer-text">
-          备用API接口（免 Cloudflare 盾，部地区调用速度更快）：<code class="footer-code-highlight">https://api.laozhang.ai</code>
+          <span data-i18n="footer.backup">备用API接口（免 Cloudflare 盾，部地区调用速度更快）：</span><code class="footer-code-highlight">https://api.laozhang.ai</code>
         </p>
         <p class="footer-text">
-          @2024 老张API All rights reserved |
-          <a href="serviceAgreement.html" target="_blank">用户协议</a> |
-          <a href="privacyPolicy.html" target="_blank">隐私政策</a> |
-          Telegram：@laozhang_cn | 联系邮箱：hi@laozhang.ai
+          <span data-i18n="footer.copyright">@2024 老张API All rights reserved</span> |
+          <a href="serviceAgreement.html" target="_blank" data-i18n="footer.terms">用户协议</a> |
+          <a href="privacyPolicy.html" target="_blank" data-i18n="footer.privacy">隐私政策</a> |
+          <span data-i18n="footer.contact">Telegram：@laozhang_cn | 联系邮箱：hi@laozhang.ai</span>
         </p>
         <p class="footer-text">
-          友情链接：
-          <a href="https://platform.openai.com/docs/api-reference/introduction" target="_blank" rel="noopener noreferrer">OpenAI开发文档</a> |
-          <a href="https://docs.anthropic.com/zh-CN/docs/welcome" target="_blank" rel="noopener noreferrer">Claude开发文档</a> |
-          <a href="https://blog.laozhang.ai" target="_blank" rel="noopener noreferrer">老张API 博客</a>
-          <a href="https://docs.laozhang.ai" target="_blank" rel="noopener noreferrer">开发文档</a>
+          <span data-i18n="footer.links">友情链接：</span>
+          <a href="https://platform.openai.com/docs/api-reference/introduction" target="_blank" rel="noopener noreferrer" data-i18n="footer.openaiDocs">OpenAI开发文档</a> |
+          <a href="https://docs.anthropic.com/zh-CN/docs/welcome" target="_blank" rel="noopener noreferrer" data-i18n="footer.claudeDocs">Claude开发文档</a> |
+          <a href="https://blog.laozhang.ai" target="_blank" rel="noopener noreferrer" data-i18n="footer.blog">老张API 博客</a>
+          <a href="https://docs.laozhang.ai" target="_blank" rel="noopener noreferrer" data-i18n="footer.docLink">开发文档</a>
         </p>
       </div>
     </footer>
     <script src="scripts.js" defer></script>
+    <script src="i18n/i18n.js" defer></script>
     <script>
       window.addEventListener('load', function() {
         var loadingOverlay = document.getElementById('loading-overlay');

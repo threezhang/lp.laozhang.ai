@@ -1236,3 +1236,82 @@ body:has(.promo-banner:not(.hidden)) .navbar {
     top: 38px;
   }
 }
+
+/* ========== 导航栏右侧区域 ========== */
+.navbar-auth {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+/* ========== 语言切换按钮 ========== */
+.lang-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: transparent;
+  border: none;
+  color: #4a5568;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-left: 8px;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.lang-btn:hover {
+  background: rgba(0, 0, 0, 0.05);
+  color: #1a202c;
+}
+
+.lang-btn:active {
+  transform: scale(0.96);
+}
+
+.lang-btn .globe-icon {
+  width: 16px;
+  height: 16px;
+  opacity: 0.7;
+}
+
+.lang-btn:hover .globe-icon {
+  opacity: 1;
+}
+
+.lang-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* 中等屏幕语言按钮调整 */
+@media (max-width: 1024px) {
+  .lang-btn .lang-text {
+    display: none;
+  }
+  .lang-btn {
+    padding: 6px;
+    gap: 0;
+  }
+}
+
+/* 移动端语言按钮调整 */
+@media (max-width: 768px) {
+  .lang-btn {
+    padding: 6px;
+    font-size: 11px;
+    margin-left: 4px;
+    gap: 0;
+  }
+  .lang-btn .globe-icon {
+    width: 18px;
+    height: 18px;
+  }
+  .lang-btn .lang-text {
+    display: none;
+  }
+}
