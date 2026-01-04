@@ -9,7 +9,7 @@
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
       "name": "老张API",
-      "description": "企业级专业稳定的 OpenAI gpt-image-1/o1/o3/Deepseek满血版/Claude3.7/Gemini2.5 pro/Grok API等全模型官方同源接口的中转分发。不限速，不过期，不惧封号，按量计费，长期可靠服务。",
+      "description": "企业级专业稳定的 OpenAI GPT-5/o3/o4-mini/Claude Opus 4.5/Gemini 3/Grok/Deepseek 等全模型官方同源接口的中转分发。不限速，不过期，不惧封号，按量计费，长期可靠服务。",
       "applicationCategory": "DeveloperApplication",
       "operatingSystem": "Any",
       "offers": {
@@ -130,6 +130,22 @@
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
   </head>
   <body>
+    <!-- 顶部推广横幅 -->
+    <div id="promo-banner" class="promo-banner">
+      <div class="promo-content">
+        <span class="promo-icon">🔥</span>
+        <span class="promo-text">
+          <strong>nano banana pro API</strong> 官方2折！
+          <span class="promo-price">$0.05/次</span>
+          <span class="promo-features">· 高并发 · 稳定可靠</span>
+        </span>
+        <a href="https://yingtu.ai" target="_blank" rel="noopener" class="promo-cta">
+          立即体验 →
+        </a>
+      </div>
+      <button class="promo-close" onclick="closePromoBanner()" aria-label="关闭">✕</button>
+    </div>
+
     <!-- 加载动画 -->
     <div id="loading-overlay" class="loading-overlay">
       <div class="loading-spinner"></div>
@@ -179,8 +195,8 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="http://fastgptplus.com/" class="nav-link" target="_blank">
-                <img src="images/icons/pricing.svg" alt="ChatGPT PLUS升级" class="nav-icon"> ChatGPT PLUS升级/158元
+              <a href="https://yingtu.ai/" class="nav-link" target="_blank">
+                🎨 免费AI生图
               </a>
             </li>
             <li class="nav-item">
@@ -217,7 +233,7 @@
               优势 1：接入简易、快速上手
             </h3>
             <p class="text-gray-700">
-              真开箱即用，注册即赠送0.1美金额度，免费获得API
+              真开箱即用，注册即赠送0.05美金额度，免费获得API
               Key。立马跑通！全部模型可用
             </p>
           </div>
@@ -247,7 +263,7 @@
           >
           <br />
           <p class="mt-4 mb-8 text-sm">
-            (赠送$0.1美金，各种模型都能用)
+            (赠送$0.05美金，各种模型都能用)
           </p>
         </div>
       </div>
@@ -311,7 +327,7 @@
 -H "Content-Type: application/json" \
 -H "Authorization: Bearer YOUR_API_KEY" \
 -d '{
-  "model": "gpt-4o",
+  "model": "gpt-5",
   "messages": [
     {"role": "user", "content": "write a haiku about ai"}
   ]
@@ -339,7 +355,7 @@ client = OpenAI(
 )
 
 completion = client.chat.completions.create(
-    model="gpt-4o",
+    model="gpt-5",
     messages=[
         {"role": "user", "content": "write a haiku about ai"}
     ]
@@ -355,8 +371,8 @@ completion = client.chat.completions.create(
               </p>
               <p>
                 📝 更多示例代码、最佳实践，
-                <a href="https://api.laozhang.ai/how-to-get-openai-claude-api-example-code.html" class="text-blue-600 hover:underline" target="_blank" rel="noopener">
-                  请看博客 >>
+                <a href="https://docs.laozhang.ai" class="text-blue-600 hover:underline" target="_blank" rel="noopener">
+                  查看文档 >>
                 </a>
               </p>
             </div>
@@ -388,7 +404,7 @@ completion = client.chat.completions.create(
             
             <div class="text-sm text-gray-600 mt-4">
               <p class="mb-2">
-                👨‍💻 99%用户已跑通，遇到卡点截图发给客服微信：ghj930213
+                👨‍💻 99%用户已跑通，遇到卡点截图发给 Telegram：@laozhang_cn
               </p>
               <p>
                 📚 更多教程 >>
@@ -409,7 +425,7 @@ completion = client.chat.completions.create(
           <div class="card p-8 tech-border">
             <h3 class="text-2xl font-semibold mb-4">🖥️ 1、注册「老张API」账号</h3>
             <p>
-              <strong><a href="https://api.laozhang.ai/register/?aff_code=0Y5h" target="_blank" rel="noopener" class="text-blue-600 hover:underline">免费注册</a></strong>：将自动赠送 0.1 美金余额，测试阶段跑通绝对没问题~ 加站长微信(ghj930213)，首冲加赠一金余额。
+              <strong><a href="https://api.laozhang.ai/register/?aff_code=0Y5h" target="_blank" rel="noopener" class="text-blue-600 hover:underline">免费注册</a></strong>：将自动赠送 0.05 美金余额，测试阶段跑通绝对没问题~
               
           </div>
           <div class="card p-8 tech-border">
@@ -476,7 +492,7 @@ completion = client.chat.completions.create(
               通过前三步，快速跑通。而后台的<a href="https://api.laozhang.ai/log" target="_blank" rel="noopener" class="text-blue-600 hover:underline"> 日志 </a>栏目，可以查看每次调用的详细日志。每一次请求的消耗清清楚楚。
             </p>
             <p class="mt-2">
-              新户注册赠送的额度用完后，可以随时在线过微信/支付宝充值，余额即刻到账，可继续调用 API。
+              新户注册赠送的额度用完后，可以随时在线充值，余额即刻到账，可继续调用 API。
             </p>
           </div>
           <div class="card p-8 tech-border">
@@ -502,8 +518,8 @@ completion = client.chat.completions.create(
                 >；
               </li>
               <li>
-                <strong>交个朋友：</strong>
-                加站长微信（ghj930213），每个客户首冲额外赠送 1 美金额度。
+                <strong>联系我们：</strong>
+                Telegram：@laozhang_cn，欢迎交流反馈。
               </li>
               <li>
                 <div class="flex flex-wrap gap-4 mb-4">
@@ -559,22 +575,22 @@ completion = client.chat.completions.create(
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <!-- 价格特点卡片 -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-          <!-- 充值优惠卡片 -->
+          <!-- 充值说明卡片 -->
           <div class="card pricing-card p-6 text-center">
             <div class="pricing-icon mb-4">💰</div>
-            <h3 class="text-xl font-semibold mb-3">充值优惠（可开票）</h3>
+            <h3 class="text-xl font-semibold mb-3">充值说明（可开票）</h3>
             <div class="price-details">
               <div class="detail-item">
-                <span class="text-sm">5美金（起充）</span>
-                <span class="text-green-500">35 元</span>
+                <span class="text-sm">最低充值</span>
+                <span class="text-green-500">5 美金 = 35 元</span>
               </div>
               <div class="detail-item">
-                <span class="text-sm">单次充值 $50</span>
-                <span class="text-green-500">+5$ 赠送</span>
+                <span class="text-sm">充值比例</span>
+                <span class="text-green-500">1:7 汇率</span>
               </div>
               <div class="detail-item">
-                <span class="text-sm">单次充值 $100及以上</span>
-                <span class="text-green-500">+10%$ 赠送</span>
+                <span class="text-sm">支付方式</span>
+                <span class="text-green-500">支付宝在线充值</span>
               </div>
             </div>
           </div>
@@ -594,7 +610,7 @@ completion = client.chat.completions.create(
               </div>
               <div class="principle-item">
                 <span class="principle-label">原则三：</span>
-                <span class="principle-content">充值加赠 超高性价比</span>
+                <span class="principle-content">按量计费 用多少买多少</span>
               </div>
             </div>
           </div>
@@ -606,15 +622,15 @@ completion = client.chat.completions.create(
             <div class="benefits">
               <div class="benefit-item">
                 <span>注册即送</span>
-                <span class="text-blue-500">0.1 美金</span>
+                <span class="text-blue-500">0.05 美金</span>
               </div>
               <div class="benefit-item">
-                <span>加微信首冲赠送</span>
-                <span class="text-blue-500">1 美金</span>
+                <span>免费测试</span>
+                <span class="text-blue-500">全部模型可用</span>
               </div>
               <div class="benefit-item">
-                <span>高校师生首冲赠送</span>
-                <span class="text-blue-500">2 美金</span>
+                <span>余额永久有效</span>
+                <span class="text-blue-500">不过期</span>
               </div>
             </div>
           </div>
@@ -683,9 +699,7 @@ completion = client.chat.completions.create(
                 <span class="toggle-icon">+</span>
               </div>
               <div class="faq-answer">
-                老张API支持所有 OpenAI
-                的模型，包括但不限于gpt-4o-2024-08-06、gpt-4o-mini、gpt-4-turbo、gpt-3.5-turbo、dall-e3 等，也支持
-                Claude-3.5。具体可用模型列表可在您的账户后台查看。
+                老张API支持所有主流 AI 模型，包括 OpenAI 最新的 GPT-5、GPT-5 mini、o3、o4-mini 等，也支持 Claude Opus 4.5、Sonnet 4.5、Haiku 4.5，以及 Google Gemini 3 Pro/Flash、Grok、Deepseek 等。具体可用模型列表可在您的账户后台查看。
               </div>
             </div>
             <div class="faq-item">
@@ -694,8 +708,7 @@ completion = client.chat.completions.create(
                 <span class="toggle-icon">+</span>
               </div>
               <div class="faq-answer">
-                登录您的老张API账户后，在"充值"页选择充值金额，支持微信和支付宝付款。最低充值金额为5美元，充值比例为1:7（即5美元=35元人民币）。充值到额，即可用于调用。充值金额大于
-                50 美金即 350 元，额外加赠 5 美金，充值 100 美金额外赠送 10 美金（需要加客服人工赠送哦）。支持对公转账，需联系客服，支持开票（下单后联系客服，提供付款记录和抬头）
+                登录您的老张API账户后，在"充值"页选择充值金额，支持支付宝付款。最低充值金额为5美元，充值比例为1:7（即5美元=35元人民币）。充值到账后即可用于调用。支持对公转账和开票（下单后联系 Telegram @laozhang_cn，提供付款记录和抬头）
               </div>
             </div>
             <div class="faq-item">
@@ -734,11 +747,10 @@ completion = client.chat.completions.create(
                 <span class="toggle-icon">+</span>
               </div>
               <div class="faq-answer">
-                OpenAI 方面，GPT-4o 的各个版本 API 知识库最新，成本较低
-                同时支持图片输入，且输入长度已经默认是 128K 了，输出可达 16K。
-                GPT-4o-mini 是替代原来的 GPT-3.5，智能程度一般但胜价格便宜~
-                Claude 的 3.5 API
-                适合翻译，文本生成等任务。具体模名称请从「账户后台」栏目查看、复制。
+                OpenAI 方面，GPT-5 是当前最强大的旗舰模型，GPT-5 mini 则是性价比之选，速度快价格低。
+                推理任务推荐 o3 或 o4-mini 模型。
+                Claude 方面，Opus 4.5 适合复杂任务和代码生成，Sonnet 4.5 和 Haiku 4.5 则是速度和成本的平衡选择。
+                具体模型名称请从「账户后台」栏目查看、复制。
               </div>
             </div>
             <div class="faq-item">
@@ -801,7 +813,7 @@ completion = client.chat.completions.create(
         >立即免费注册API</a
       >
       <p class="mt-4 text-sm">
-        (每个用户均可赠送$0.1美金测试额度，确保用起来)
+        (每个用户均可赠送$0.05美金测试额度，确保用起来)
       </p>
     </div>
     <footer class="footer">
@@ -813,7 +825,7 @@ completion = client.chat.completions.create(
           @2024 老张API All rights reserved |
           <a href="serviceAgreement.html" target="_blank">用户协议</a> |
           <a href="privacyPolicy.html" target="_blank">隐私政策</a> |
-          售后微信：ghj930213 | 联系邮箱：threezhang.cn@gmail.com | Telegram：@laozhang_cn
+          Telegram：@laozhang_cn | 联系邮箱：hi@laozhang.ai
         </p>
         <p class="footer-text">
           友情链接：

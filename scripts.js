@@ -126,3 +126,20 @@ window.addEventListener('load', function () {
     loadingOverlay.style.display = 'none';
   }, 500);
 });
+
+// 关闭推广横幅
+function closePromoBanner() {
+  const banner = document.getElementById('promo-banner');
+  if (banner) {
+    banner.classList.add('hidden');
+    sessionStorage.setItem('promoBannerClosed', 'true');
+  }
+}
+
+// 页面加载时检查横幅状态
+document.addEventListener('DOMContentLoaded', function() {
+  const banner = document.getElementById('promo-banner');
+  if (banner && sessionStorage.getItem('promoBannerClosed') === 'true') {
+    banner.classList.add('hidden');
+  }
+});
